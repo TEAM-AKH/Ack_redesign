@@ -7,10 +7,10 @@ type LogoProps = {
 };
 
 const LogoIcon = ({ isDarkMode, ...props }: { isDarkMode?: boolean; [key: string]: any }) => {
-    const primaryColor = isDarkMode ? '#A855F7' : '#6119aa';
-    const secondaryColor = isDarkMode ? '#581C87' : '#9333EA';
-    const tertiaryColor = isDarkMode ? '#3B0764' : '#C084FC';
-    const handColor = isDarkMode ? '#E5E7EB' : '#1F2937';
+    const primaryColor = isDarkMode ? '#C084FC' : '#6119aa';
+    const secondaryColor = isDarkMode ? '#A855F7' : '#9333EA';
+    const tertiaryColor = isDarkMode ? '#E9D5FF' : '#C084FC';
+    const handColor = isDarkMode ? '#111827' : '#F9FAFB';
     const backgroundColor = isDarkMode ? '#111827' : '#F9FAFB';
 
     return (
