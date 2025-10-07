@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Briefcase, Calendar, ShoppingBag } from 'lucide-react';
@@ -11,6 +12,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { BackgroundPaths } from '@/components/ui/background-paths';
 
 const features = [
   {
@@ -38,44 +40,10 @@ const features = [
 ];
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
-
   return (
     <div className="flex flex-col min-h-dvh">
       <main className="flex-1">
-        <section className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center text-center particle-hero">
-          {heroImage && (
-             <Image
-              src={heroImage.imageUrl}
-              alt={heroImage.description}
-              fill
-              className="object-cover -z-10 opacity-10"
-              priority
-              data-ai-hint={heroImage.imageHint}
-            />
-          )}
-          <div className="container px-4 md:px-6 relative">
-            <div className="max-w-3xl mx-auto space-y-4">
-              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-                Welcome to Acknowledgement Hub
-              </h1>
-              <p className="text-lg md:text-xl text-foreground/80">
-                Your one-stop destination for cutting-edge services, innovative
-                products, and engaging events.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
-                  <Link href="/about">
-                    Learn More <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href="/contact">Contact Us</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <BackgroundPaths title="Welcome to Acknowledgement Hub" />
 
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-slate-900 text-slate-50">
           <div className="container px-4 md:px-6">
