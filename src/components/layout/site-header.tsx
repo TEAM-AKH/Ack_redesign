@@ -92,7 +92,7 @@ function Navbar({ className, isDarkMode }: { className?: string, isDarkMode?: bo
         <MenuItem setActive={setActive} active={active} item="Services" isDarkMode={isDarkMode}>
           <div className="flex flex-col space-y-4 text-sm">
             {services.map((service) => (
-              <HoveredLink key={service.title} href={service.href} isDarkMode={isDarkMode}>
+              <HoveredLink key={service.title} href={service.href}>
                 {service.title}
               </HoveredLink>
             ))}
@@ -109,7 +109,6 @@ function Navbar({ className, isDarkMode }: { className?: string, isDarkMode?: bo
                   src={product.src}
                   description={product.description}
                   data-ai-hint={product['data-ai-hint']}
-                  isDarkMode={isDarkMode}
                 />
               ) : null
             )}

@@ -51,7 +51,7 @@ export const MenuItem = ({
                 layoutId="active" // layoutId ensures smooth animation
                 className={cn(
                     "backdrop-blur-sm rounded-2xl overflow-hidden border shadow-xl",
-                    isDarkMode ? "bg-black border-white/[0.2]" : "bg-white border-black/[0.2]"
+                    "bg-white border-black/[0.2]"
                   )}
               >
                 <motion.div
@@ -86,8 +86,8 @@ export const Menu = ({
       className={cn(
         "relative rounded-full border flex items-center justify-center space-x-4 px-8 py-6 shadow-input",
         isDarkMode
-          ? "border-transparent bg-black dark:border-white/[0.2]"
-          : "border-transparent dark:bg-white bg-white",
+          ? "border-transparent bg-black"
+          : "border-transparent bg-white",
         className
       )}
     >
@@ -122,10 +122,10 @@ export const ProductItem = ({
         data-ai-hint={dataAiHint}
       />
       <div>
-        <h4 className={cn("text-xl font-bold mb-1", isDarkMode ? "text-white" : "text-black")}>
+        <h4 className={cn("text-xl font-bold mb-1", "text-black")}>
           {title}
         </h4>
-        <p className={cn("text-sm max-w-[10rem]", isDarkMode ? "text-neutral-300" : "text-neutral-700")}>
+        <p className={cn("text-sm max-w-[10rem]", "text-neutral-700")}>
           {description}
         </p>
       </div>
@@ -138,8 +138,8 @@ export const HoveredLink = ({ children, isDarkMode, ...rest }: any) => {
     <Link
       {...rest}
       className={cn(
-        "hover:text-black",
-        isDarkMode ? "dark:text-neutral-200" : "text-neutral-700"
+        "text-neutral-700 hover:text-black",
+        isDarkMode ? "dark:text-neutral-200" : ""
       )}
     >
       {children}
