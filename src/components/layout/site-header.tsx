@@ -10,7 +10,6 @@ import { cn } from '@/lib/utils';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { MobileNav } from './mobile-nav';
 import { Logo } from '../logo';
-import Link from 'next/link';
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
@@ -121,14 +120,14 @@ function Navbar({ className }: { className?: string }) {
 }
 export function SiteHeader() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 shadow-md backdrop-blur-sm md:hidden">
-      <div className="container flex h-16 items-center justify-between">
-        <Logo />
-        <MobileNav />
-      </div>
-      <div className="hidden md:block">
-        <Navbar />
-      </div>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent md:bg-transparent">
+        <div className="md:hidden container flex h-16 items-center justify-between bg-background/80 shadow-md backdrop-blur-sm">
+            <Logo />
+            <MobileNav />
+        </div>
+        <div className="hidden md:block">
+            <Navbar />
+        </div>
     </header>
   );
 }
