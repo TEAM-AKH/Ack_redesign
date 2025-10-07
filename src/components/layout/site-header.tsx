@@ -122,12 +122,13 @@ function Navbar({ className }: { className?: string }) {
   );
 }
 export function SiteHeader() {
+  const theme = useScrollSection();
   return (
     <header className="relative w-full flex items-center justify-center">
       <div className="hidden md:block w-full">
         <Navbar />
       </div>
-      <div className="md:hidden fixed top-0 left-0 right-0 z-50 bg-background/80 shadow-md backdrop-blur-sm">
+      <div className={cn("md:hidden fixed top-0 left-0 right-0 z-50 shadow-md backdrop-blur-sm", theme === 'dark' ? 'bg-black/80' : 'bg-background/80' )}>
         <div className="container flex h-16 items-center justify-between">
           <Logo />
           <MobileNav />
