@@ -64,21 +64,14 @@ export const MenuItem = ({
 export const Menu = ({
   setActive,
   children,
-  theme,
 }: {
   setActive: (item: string | null) => void;
   children: React.ReactNode;
-  theme?: string;
 }) => {
   return (
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
-      className={cn(
-        "relative rounded-full border flex justify-center space-x-4 px-8 py-6 transition-colors duration-300",
-        theme === 'dark'
-          ? "bg-white border-black/[0.2] shadow-input"
-          : "bg-black border-white/[0.2]"
-      )}
+      className="relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 "
     >
       {children}
     </nav>

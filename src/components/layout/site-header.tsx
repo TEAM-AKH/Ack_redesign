@@ -11,11 +11,9 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { MobileNav } from './mobile-nav';
 import { Logo } from '../logo';
 import Link from 'next/link';
-import { useScrollSection } from '@/hooks/use-scroll-section';
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
-  const theme = useScrollSection();
 
   const services = [
     {
@@ -87,7 +85,7 @@ function Navbar({ className }: { className?: string }) {
     <div
       className={cn('fixed top-10 inset-x-0 max-w-2xl mx-auto z-50', className)}
     >
-      <Menu setActive={setActive} theme={theme}>
+      <Menu setActive={setActive}>
         <HoveredLink href="/">Home</HoveredLink>
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
@@ -122,17 +120,14 @@ function Navbar({ className }: { className?: string }) {
   );
 }
 export function SiteHeader() {
-  const theme = useScrollSection();
   return (
-    <header className={cn("relative w-full flex items-center justify-center", theme === 'dark' ? 'dark' : 'light')}>
-      <div className="hidden md:block w-full">
-        <Navbar />
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 shadow-md backdrop-blur-sm md:hidden">
+      <div className="container flex h-16 items-center justify-between">
+        <Logo />
+        <MobileNav />
       </div>
-      <div className={cn("md:hidden fixed top-0 left-0 right-0 z-50 shadow-md backdrop-blur-sm", theme === 'dark' ? 'bg-black/80' : 'bg-background/80' )}>
-        <div className="container flex h-16 items-center justify-between">
-          <Logo />
-          <MobileNav />
-        </div>
+      <div className="hidden md:block">
+        <Navbar />
       </div>
     </header>
   );
