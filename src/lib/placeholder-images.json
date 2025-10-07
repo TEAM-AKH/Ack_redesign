@@ -161,6 +161,30 @@
       "description": "Abstract image of communication lines",
       "imageUrl": "https://picsum.photos/seed/7001/1600/400",
       "imageHint": "communication abstract"
+    },
+    {
+      "id": "navbar-product-1",
+      "description": "Algochurn product image",
+      "imageUrl": "https://assets.aceternity.com/demos/algochurn.webp",
+      "imageHint": "product interface"
+    },
+    {
+      "id": "navbar-product-2",
+      "description": "Tailwind Master Kit product image",
+      "imageUrl": "https://assets.aceternity.com/demos/tailwindmasterkit.webp",
+      "imageHint": "code components"
+    },
+    {
+      "id": "navbar-product-3",
+      "description": "Moonbeam product image",
+      "imageUrl": "https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png",
+      "imageHint": "writing application"
+    },
+    {
+      "id": "navbar-product-4",
+      "description": "Rogue product image",
+      "imageUrl": "https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png",
+      "imageHint": "AI government contracts"
     }
   ]
 }

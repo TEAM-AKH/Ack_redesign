@@ -32,7 +32,7 @@
   }
 
   .dark {
-    --background: 277 65% 11%;
+    --background: 0 0% 0%;
     --foreground: 275 67% 95%;
     --card: 277 65% 15%;
     --card-foreground: 275 67% 95%;
@@ -95,4 +95,20 @@
   50% { transform: translate(-5px, -10px); }
   75% { transform: translate(10px, -5px); }
   100% { transform: translate(0, 0); }
+}
+
+@layer base {
+  .dark {
+    --background: #000000;
+    --shadow-input: 0px 1px 0px 0px #1E293B;
+  }
+  
+  .light {
+    --background: #ffffff;
+    --shadow-input: 0px 1px 0px 0px #E5E7EB;
+  }
+}
+
+.shadow-input {
+  box-shadow: var(--shadow-input);
 }
