@@ -76,8 +76,8 @@ export const Menu = ({
       className={cn(
         "relative rounded-full border flex justify-center space-x-4 px-8 py-6 transition-colors duration-300",
         theme === 'dark'
-          ? "dark:bg-white dark:border-black/[0.2] bg-white shadow-input"
-          : "dark:bg-black dark:border-white/[0.2] bg-black"
+          ? "bg-white border-black/[0.2] shadow-input"
+          : "bg-black border-white/[0.2]"
       )}
     >
       {children}

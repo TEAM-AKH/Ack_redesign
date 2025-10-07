@@ -124,7 +124,7 @@ function Navbar({ className }: { className?: string }) {
 export function SiteHeader() {
   const theme = useScrollSection();
   return (
-    <header className={cn("relative w-full flex items-center justify-center", theme === 'dark' ? 'dark' : '')}>
+    <header className={cn("relative w-full flex items-center justify-center", theme === 'dark' ? 'dark' : 'light')}>
       <div className="hidden md:block w-full">
         <Navbar />
       </div>

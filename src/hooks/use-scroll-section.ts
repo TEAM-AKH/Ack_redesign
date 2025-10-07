@@ -10,19 +10,20 @@ export function useScrollSection() {
       
       let currentTheme = 'dark';
 
-      sections.forEach((section) => {
-        const sectionTop = section.getBoundingClientRect().top;
-        const sectionBottom = section.getBoundingClientRect().bottom;
-
-        if (sectionTop < navHeight && sectionBottom > navHeight) {
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        
+        // Check if the section is in the viewport, considering the nav height
+        if (rect.top <= navHeight && rect.bottom >= navHeight) {
           currentTheme = section.getAttribute('data-theme') || 'dark';
+          break; 
         }
-      });
+      }
       
       setTheme(currentTheme);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
 
     return () => {
