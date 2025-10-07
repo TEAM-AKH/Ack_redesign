@@ -1,3 +1,166 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Abstract futuristic background with glowing purple and blue particles",
+      "imageUrl": "https://images.unsplash.com/photo-1671716784499-a3d26826d844?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzU5NzY3NDk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract background"
+    },
+    {
+      "id": "feature-services",
+      "description": "Professional team collaborating in a modern office",
+      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NTk3NzQzNDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "team collaboration"
+    },
+    {
+      "id": "feature-products",
+      "description": "Sleek and modern electronic gadgets on a table",
+      "imageUrl": "https://picsum.photos/seed/1002/600/400",
+      "imageHint": "modern gadgets"
+    },
+    {
+      "id": "feature-events",
+      "description": "Large conference hall with an audience listening to a speaker",
+      "imageUrl": "https://picsum.photos/seed/1003/600/400",
+      "imageHint": "conference audience"
+    },
+    {
+      "id": "service-1",
+      "description": "Cloud computing and data storage concept",
+      "imageUrl": "https://picsum.photos/seed/2001/600/400",
+      "imageHint": "cloud computing"
+    },
+    {
+      "id": "service-2",
+      "description": "Cybersecurity expert monitoring network traffic",
+      "imageUrl": "https://picsum.photos/seed/2002/600/400",
+      "imageHint": "cyber security"
+    },
+    {
+      "id": "service-3",
+      "description": "AI and machine learning brain interface",
+      "imageUrl": "https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1OTcyMjIzMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "artificial intelligence"
+    },
+    {
+      "id": "service-4",
+      "description": "Data analytics dashboard with charts and graphs",
+      "imageUrl": "https://picsum.photos/seed/2004/600/400",
+      "imageHint": "data analytics"
+    },
+    {
+      "id": "service-5",
+      "description": "Digital marketing strategy session with sticky notes",
+      "imageUrl": "https://images.unsplash.com/photo-1590102425728-aa39769512ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYXJrZXRpbmclMjBzdHJhdGVneXxlbnwwfHx8fDE3NTk3ODU0NzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "marketing strategy"
+    },
+    {
+      "id": "service-6",
+      "description": "UX/UI designer sketching wireframes",
+      "imageUrl": "https://images.unsplash.com/photo-1602576666092-bf6447a729fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx1eCUyMGRlc2lnbnxlbnwwfHx8fDE3NTk3NTQwMzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ux design"
+    },
+    {
+      "id": "product-1",
+      "description": "A sleek, futuristic drone in mid-flight",
+      "imageUrl": "https://picsum.photos/seed/3001/600/400",
+      "imageHint": "drone flight"
+    },
+    {
+      "id": "product-2",
+      "description": "Smartwatch with a holographic display",
+      "imageUrl": "https://images.unsplash.com/photo-1579721840641-7d0e67f1204e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzbWFydCUyMHdhdGNofGVufDB8fHx8MTc1OTc0MDkyOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "smart watch"
+    },
+    {
+      "id": "product-3",
+      "description": "Virtual reality headset being worn",
+      "imageUrl": "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx2aXJ0dWFsJTIwcmVhbGl0eXxlbnwwfHx8fDE3NTk3NTY4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "virtual reality"
+    },
+    {
+      "id": "product-4",
+      "description": "Advanced home automation hub",
+      "imageUrl": "https://picsum.photos/seed/3004/600/400",
+      "imageHint": "smart home"
+    },
+    {
+      "id": "product-5",
+      "description": "A robot assistant performing a task",
+      "imageUrl": "https://picsum.photos/seed/3005/600/400",
+      "imageHint": "robot assistant"
+    },
+    {
+      "id": "product-6",
+      "description": "Electric concept car on a futuristic road",
+      "imageUrl": "https://images.unsplash.com/photo-1615829386703-e2bb66a7cb7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGVjdHJpYyUyMGNhcnxlbnwwfHx8fDE3NTk3NzY2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "electric car"
+    },
+    {
+      "id": "event-1",
+      "description": "Tech conference keynote speaker on stage",
+      "imageUrl": "https://picsum.photos/seed/4001/600/400",
+      "imageHint": "conference keynote"
+    },
+    {
+      "id": "event-2",
+      "description": "Networking event with people talking",
+      "imageUrl": "https://images.unsplash.com/photo-1528605248644-14dd04022da1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxuZXR3b3JraW5nJTIwZXZlbnR8ZW58MHx8fHwxNzU5NzgxNDM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "networking event"
+    },
+    {
+      "id": "event-3",
+      "description": "Hands-on coding workshop",
+      "imageUrl": "https://picsum.photos/seed/4003/600/400",
+      "imageHint": "coding workshop"
+    },
+    {
+      "id": "event-4",
+      "description": "Product launch event with a new device showcased",
+      "imageUrl": "https://images.unsplash.com/photo-1759491627968-3ca2247a31e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwcm9kdWN0JTIwbGF1bmNofGVufDB8fHx8MTc1OTc2NzM3N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "product launch"
+    },
+    {
+      "id": "team-1",
+      "description": "Portrait of a female CEO in a modern office",
+      "imageUrl": "https://picsum.photos/seed/5001/400/400",
+      "imageHint": "female professional"
+    },
+    {
+      "id": "team-2",
+      "description": "Portrait of a male lead engineer",
+      "imageUrl": "https://picsum.photos/seed/5002/400/400",
+      "imageHint": "male professional"
+    },
+    {
+      "id": "team-3",
+      "description": "Portrait of a non-binary marketing director",
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTk3NDM1MjZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "team-4",
+      "description": "Portrait of a female product manager",
+      "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NTk3NjIyNDh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional woman"
+    },
+    {
+      "id": "about-mission",
+      "description": "Abstract image representing innovation and forward thinking",
+      "imageUrl": "https://picsum.photos/seed/6001/800/600",
+      "imageHint": "abstract innovation"
+    },
+    {
+      "id": "about-vision",
+      "description": "Abstract image representing global connection and future",
+      "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnbG9iYWwlMjBjb25uZWN0aW9ufGVufDB8fHx8MTc1OTc4MTUyNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "global connection"
+    },
+    {
+      "id": "contact-hero",
+      "description": "Abstract image of communication lines",
+      "imageUrl": "https://picsum.photos/seed/7001/1600/400",
+      "imageHint": "communication abstract"
+    }
+  ]
 }
