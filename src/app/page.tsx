@@ -15,6 +15,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { BackgroundPaths } from '@/components/ui/background-paths';
 import { Testimonials } from '@/components/testimonials';
 import { BackgroundBoxesSection } from '@/components/background-boxes-section';
+import { Feature108 } from '@/components/feature-section';
 
 const features = [
   {
@@ -101,6 +102,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Feature108 />
 
         <Testimonials />
 
