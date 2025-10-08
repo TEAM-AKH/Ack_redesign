@@ -87,7 +87,7 @@ export const Menu = ({
         "relative rounded-full border flex items-center justify-between px-8 py-4 shadow-input backdrop-blur-xl",
         isDarkMode
           ? "bg-black/50 border-white/10"
-          : "bg-white/50 border-black/10",
+          : "bg-white/80 backdrop-blur-2xl border-black/10",
         className
       )}
     >
@@ -125,7 +125,7 @@ export const ProductItem = ({
         <h4 className={cn("text-xl font-bold mb-1", "text-black")}>
           {title}
         </h4>
-        <p className={cn("text-sm max-w-[10rem]", "text-neutral-700")}>
+        <p className={cn("text-sm max-w-[10rem]", "text-primary/90")}>
           {description}
         </p>
       </div>
@@ -138,7 +138,7 @@ export const HoveredLink = ({ children, isDarkMode, ...rest }: any) => {
     <Link
       {...rest}
       className={cn(
-        "text-neutral-700 dark:text-neutral-200 hover:text-black dark:hover:text-white",
+        "text-primary dark:text-neutral-200 hover:text-black dark:hover:text-white",
         isDarkMode ? "dark:text-neutral-200" : ""
       )}
     >
