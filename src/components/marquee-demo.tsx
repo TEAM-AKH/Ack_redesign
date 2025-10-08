@@ -104,6 +104,30 @@ export function MarqueeDemo2() {
 }
 ```
 
+Extend existing tailwind.config.js with this code:
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        marquee: 'marquee var(--duration, 30s) linear infinite',
+        "marquee-reverse": "marquee-reverse var(--duration, 30s) linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          to: { transform: 'translateX(-50%)' }
+        },
+        "marquee-reverse": {
+          "from": { transform: "translateX(0%)" },
+          "to": { transform: "translateX(-100%)" },
+        },
+      }
+    },
+  },
+};
+```
+
 Implementation Guidelines
  1. Analyze the component structure and identify all required dependencies
  2. Review the component's argumens and state
@@ -122,4 +146,4 @@ Steps to integrate
  3. Use lucide-react icons for svgs or logos if component requires them
 
 
-add this above background-boxes-section
+change the color of logos to be compatible with a dark and light theme
