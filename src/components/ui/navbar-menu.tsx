@@ -51,7 +51,7 @@ export const MenuItem = ({
                 layoutId="active" // layoutId ensures smooth animation
                 className={cn(
                     "backdrop-blur-sm rounded-2xl overflow-hidden border shadow-xl",
-                    "bg-white border-black/[0.2]"
+                    "bg-white/90 border-black/10"
                   )}
               >
                 <motion.div
@@ -84,10 +84,10 @@ export const Menu = ({
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
       className={cn(
-        "relative rounded-full border flex items-center justify-center space-x-4 px-8 py-6 shadow-input",
+        "relative rounded-full border flex items-center justify-center space-x-4 px-8 py-6 shadow-input backdrop-blur-md",
         isDarkMode
-          ? "border-transparent bg-black"
-          : "border-transparent bg-white",
+          ? "bg-black/80 border-white/10"
+          : "bg-white/80 border-black/10",
         className
       )}
     >
@@ -138,7 +138,7 @@ export const HoveredLink = ({ children, isDarkMode, ...rest }: any) => {
     <Link
       {...rest}
       className={cn(
-        "text-purple-700 hover:text-purple-100",
+        "text-neutral-700 dark:text-neutral-200 hover:text-black dark:hover:text-white",
         isDarkMode ? "dark:text-neutral-200" : ""
       )}
     >
