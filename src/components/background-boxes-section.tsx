@@ -9,10 +9,10 @@ import { ArrowRight } from "lucide-react";
 export function BackgroundBoxesSection() {
   return (
     <section className="w-full">
-      <div className="min-h-[20rem] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)]" />
+      <div className="min-h-[30rem] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
         <Boxes />
-        <div className="flex flex-col items-center text-center p-4 relative z-20">
+        <div className="absolute inset-0 w-full h-full bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+        <div className="relative z-30 flex flex-col items-center text-center p-4 pointer-events-none">
           <h2 className={cn("md:text-4xl text-xl text-white")}>
             Acknowledgement Hub
           </h2>
