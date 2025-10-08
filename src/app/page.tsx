@@ -104,8 +104,8 @@ export default function Home() {
 
         <Testimonials />
 
-        <BackgroundBoxesSection />
       </main>
+      <BackgroundBoxesSection />
     </div>
   );
 }

@@ -8,9 +8,9 @@ import { ArrowRight } from "lucide-react";
 
 export function BackgroundBoxesSection() {
   return (
-    <section className="py-12 md:py-24 lg:py-32">
+    <section className="py-12 md:py-24 lg:py-32 w-full">
       <div className="h-[30rem] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
-        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+        <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)]" />
 
         <Boxes />
         <div className="relative z-30 flex flex-col items-center text-center p-4">
