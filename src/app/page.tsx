@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { BackgroundPaths } from '@/components/ui/background-paths';
+import { Testimonials } from '@/components/testimonials';
 
 const features = [
   {
@@ -99,6 +100,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <Testimonials />
 
         <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">

@@ -138,7 +138,7 @@ export const HoveredLink = ({ children, isDarkMode, ...rest }: any) => {
     <Link
       {...rest}
       className={cn(
-        "text-neutral-700 hover:text-black",
+        "text-purple-700 hover:text-purple-100",
         isDarkMode ? "dark:text-neutral-200" : ""
       )}
     >

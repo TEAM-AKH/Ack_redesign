@@ -185,6 +185,60 @@
       "description": "Rogue product image",
       "imageUrl": "https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png",
       "imageHint": "AI government contracts"
+    },
+    {
+      "id": "testimonial-1",
+      "description": "Portrait of Briana Patton",
+      "imageUrl": "https://picsum.photos/seed/8001/40/40",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-2",
+      "description": "Portrait of Bilal Ahmed",
+      "imageUrl": "https://picsum.photos/seed/8002/40/40",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-3",
+      "description": "Portrait of Saman Malik",
+      "imageUrl": "https://picsum.photos/seed/8003/40/40",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-4",
+      "description": "Portrait of Omar Raza",
+      "imageUrl": "https://picsum.photos/seed/8004/40/40",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-5",
+      "description": "Portrait of Zainab Hussain",
+      "imageUrl": "https://picsum.photos/seed/8005/40/40",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-6",
+      "description": "Portrait of Aliza Khan",
+      "imageUrl": "https://picsum.photos/seed/8006/40/40",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-7",
+      "description": "Portrait of Farhan Siddiqui",
+      "imageUrl": "https://picsum.photos/seed/8007/40/40",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-8",
+      "description": "Portrait of Sana Sheikh",
+      "imageUrl": "https://picsum.photos/seed/8008/40/40",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-9",
+      "description": "Portrait of Hassan Ali",
+      "imageUrl": "https://picsum.photos/seed/8009/40/40",
+      "imageHint": "man portrait"
     }
   ]
 }
