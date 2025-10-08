@@ -154,11 +154,11 @@ export default function Home() {
 
         <Feature108 />
 
-        <Testimonials />
-
         <section className="bg-black text-white">
           <Gallery6 items={galleryItems} heading="Featured Projects" />
         </section>
+
+        <Testimonials />
 
       </main>
       <BackgroundBoxesSection />
