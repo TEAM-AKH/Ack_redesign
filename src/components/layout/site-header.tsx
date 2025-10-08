@@ -82,41 +82,41 @@ function Navbar({ className, isDarkMode }: { className?: string, isDarkMode?: bo
 
   return (
     <div
-      className={cn('fixed top-10 inset-x-0 max-w-3xl mx-auto z-50', className)}
+      className={cn('fixed top-10 inset-x-0 max-w-4xl mx-auto z-50', className)}
     >
       <Menu setActive={setActive} isDarkMode={isDarkMode}>
-        <div className="flex-shrink-0">
-          <Logo isDarkMode={isDarkMode} />
+        <Logo isDarkMode={isDarkMode} />
+        <div className="flex items-center space-x-8">
+            <HoveredLink href="/" isDarkMode={isDarkMode}>Home</HoveredLink>
+            <MenuItem setActive={setActive} active={active} item="Services" isDarkMode={isDarkMode}>
+            <div className="flex flex-col space-y-4 text-sm">
+                {services.map((service) => (
+                <HoveredLink key={service.title} href={service.href}>
+                    {service.title}
+                </HoveredLink>
+                ))}
+            </div>
+            </MenuItem>
+            <MenuItem setActive={setActive} active={active} item="Products" isDarkMode={isDarkMode}>
+            <div className="text-sm grid grid-cols-2 gap-10 p-4">
+                {products.map((product) =>
+                product.src ? (
+                    <ProductItem
+                    key={product.title}
+                    title={product.title}
+                    href={product.href}
+                    src={product.src}
+                    description={product.description}
+                    data-ai-hint={product['data-ai-hint']}
+                    />
+                ) : null
+                )}
+            </div>
+            </MenuItem>
+            <HoveredLink href="/events" isDarkMode={isDarkMode}>Events</HoveredLink>
+            <HoveredLink href="/about" isDarkMode={isDarkMode}>About</HoveredLink>
+            <HoveredLink href="/contact" isDarkMode={isDarkMode}>Contact</HoveredLink>
         </div>
-        <HoveredLink href="/" isDarkMode={isDarkMode}>Home</HoveredLink>
-        <MenuItem setActive={setActive} active={active} item="Services" isDarkMode={isDarkMode}>
-          <div className="flex flex-col space-y-4 text-sm">
-            {services.map((service) => (
-              <HoveredLink key={service.title} href={service.href}>
-                {service.title}
-              </HoveredLink>
-            ))}
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products" isDarkMode={isDarkMode}>
-          <div className="text-sm grid grid-cols-2 gap-10 p-4">
-            {products.map((product) =>
-              product.src ? (
-                <ProductItem
-                  key={product.title}
-                  title={product.title}
-                  href={product.href}
-                  src={product.src}
-                  description={product.description}
-                  data-ai-hint={product['data-ai-hint']}
-                />
-              ) : null
-            )}
-          </div>
-        </MenuItem>
-        <HoveredLink href="/events" isDarkMode={isDarkMode}>Events</HoveredLink>
-        <HoveredLink href="/about" isDarkMode={isDarkMode}>About</HoveredLink>
-        <HoveredLink href="/contact" isDarkMode={isDarkMode}>Contact</HoveredLink>
       </Menu>
     </div>
   );
