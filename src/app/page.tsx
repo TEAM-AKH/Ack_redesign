@@ -14,7 +14,6 @@ import {
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { BackgroundPaths } from '@/components/ui/background-paths';
 import { Testimonials } from '@/components/testimonials';
-import { BackgroundBoxesSection } from '@/components/background-boxes-section';
 import { Feature108 } from '@/components/feature-section';
 import { Gallery6 } from '@/components/ui/gallery6';
 
@@ -161,7 +160,6 @@ export default function Home() {
         <Testimonials />
 
       </main>
-      <BackgroundBoxesSection />
     </div>
   );
 }

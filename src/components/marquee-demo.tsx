@@ -122,4 +122,4 @@ Steps to integrate
  3. Use lucide-react icons for svgs or logos if component requires them
 
 
-add this above background-boxes-section, also add a fitting heading
+add this above background-boxes-section
