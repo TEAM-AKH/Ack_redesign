@@ -10,16 +10,17 @@ export function BackgroundBoxesSection() {
   return (
     <section className="w-full">
       <div className="min-h-[20rem] relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center">
+        <div className="absolute inset-0 w-full h-full bg-slate-900 z-10 [mask-image:radial-gradient(transparent,white)]" />
         <Boxes />
-        <div className="flex flex-col items-center text-center p-4">
-          <h2 className={cn("md:text-4xl text-xl text-white relative z-20")}>
+        <div className="flex flex-col items-center text-center p-4 relative z-20">
+          <h2 className={cn("md:text-4xl text-xl text-white")}>
             Acknowledgement Hub
           </h2>
-          <p className="text-center mt-2 text-neutral-300 max-w-2xl relative z-20">
+          <p className="text-center mt-2 text-neutral-300 max-w-2xl">
             Join us on a journey of innovation and excellence. Let&apos;s
             build the future together.
           </p>
-          <div className="mt-8 relative z-20">
+          <div className="mt-8">
             <Button asChild size="lg">
               <Link href="/contact">
                 Connect With Us <ArrowRight className="ml-2 h-5 w-5" />
