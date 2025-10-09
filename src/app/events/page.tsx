@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Calendar, MapPin, ArrowRight, Star } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -53,12 +54,12 @@ const otherEvents = events.slice(1);
 export default function EventsPage() {
   return (
     <div className="flex flex-col">
-      <header className="pt-24 pb-12 bg-background">
+      <header className="py-32 md:py-48 bg-black">
         <div className="container text-center">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
             Upcoming Events
           </h1>
-          <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl mt-4">
+          <p className="mx-auto max-w-[700px] text-slate-300 md:text-xl mt-4">
             Join us at our events to learn, network, and be inspired.
           </p>
         </div>
