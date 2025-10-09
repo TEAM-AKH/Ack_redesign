@@ -20,30 +20,24 @@ export const MenuItem = ({
   item,
   children,
   isDarkMode,
-  href,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
   isDarkMode?: boolean;
-  href?: string;
 }) => {
-  const content = (
-    <motion.p
-      transition={{ duration: 0.3 }}
-      className={cn(
-        "cursor-pointer hover:opacity-[0.9]",
-        isDarkMode ? "text-white" : "text-black"
-      )}
-    >
-      {item}
-    </motion.p>
-  );
-
   return (
     <div onMouseEnter={() => setActive(item)} className="relative ">
-      {href ? <Link href={href}>{content}</Link> : content}
+      <motion.p
+        transition={{ duration: 0.3 }}
+        className={cn(
+            "cursor-pointer hover:opacity-[0.9]",
+            isDarkMode ? "text-white" : "text-black"
+          )}
+      >
+        {item}
+      </motion.p>
       {active !== null && (
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
@@ -56,15 +50,16 @@ export const MenuItem = ({
                 transition={transition}
                 layoutId="active" // layoutId ensures smooth animation
                 className={cn(
-                  "rounded-2xl overflow-hidden border shadow-xl",
-                  isDarkMode
-                    ? "bg-white border-neutral-200"
-                    : "bg-black border-neutral-800"
-                )}
+                    "backdrop-blur-sm rounded-2xl overflow-hidden border shadow-xl",
+                    "bg-white/90 border-black/10"
+                  )}
               >
-                <div className="h-full w-max p-4">
+                <motion.div
+                  layout // layout ensures smooth animation
+                  className="w-max h-full p-4"
+                >
                   {children}
-                </div>
+                </motion.div>
               </motion.div>
             </div>
           )}
@@ -89,10 +84,10 @@ export const Menu = ({
     <nav
       onMouseLeave={() => setActive(null)} // resets the state
       className={cn(
-        "relative rounded-full border grid grid-cols-[1fr,auto] items-center justify-between px-8 py-4 shadow-input",
+        "relative rounded-full border flex items-center justify-between px-8 py-4 shadow-input backdrop-blur-xl",
         isDarkMode
-          ? "bg-black/10 border-white/10 backdrop-blur-3xl"
-          : "bg-white/10 border-black/10 backdrop-blur-3xl",
+          ? "bg-black/50 border-white/10"
+          : "bg-white/80 backdrop-blur-2xl border-black/10",
         className
       )}
     >
@@ -127,10 +122,10 @@ export const ProductItem = ({
         data-ai-hint={dataAiHint}
       />
       <div>
-        <h4 className={cn("text-xl font-bold mb-1", isDarkMode ? "text-black" : "text-white")}>
+        <h4 className={cn("text-xl font-bold mb-1", "text-black")}>
           {title}
         </h4>
-        <p className={cn("text-sm max-w-[10rem]", isDarkMode ? "text-neutral-700" : "text-neutral-300")}>
+        <p className={cn("text-sm max-w-[10rem]", "text-primary/90")}>
           {description}
         </p>
       </div>
@@ -139,20 +134,12 @@ export const ProductItem = ({
 };
 
 export const HoveredLink = ({ children, isDarkMode, ...rest }: any) => {
-  const linkClassName = isDarkMode
-    ? "text-neutral-700 dark:text-neutral-200"
-    : "text-neutral-700 dark:text-neutral-200";
-
-  const hoverClassName = isDarkMode
-    ? "hover:text-black dark:hover:text-white"
-    : "hover:text-black dark:hover:text-black";
-    
   return (
     <Link
       {...rest}
       className={cn(
-        linkClassName,
-        hoverClassName
+        "text-primary dark:text-neutral-200 hover:text-black dark:hover:text-white",
+        isDarkMode ? "dark:text-neutral-200" : ""
       )}
     >
       {children}
