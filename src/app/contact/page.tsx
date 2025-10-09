@@ -84,7 +84,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">Email Us</h4>
-                    <Link href="mailto:contact@acknowledgementhub.com" className="text-accent hover:underline">
+                    <Link href="mailto:contact@acknowledgementhub.com" className="text-purple-400 hover:underline">
                       contact@acknowledgementhub.com
                     </Link>
                   </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white">Call Us</h4>
-                    <Link href="tel:+1234567890" className="text-accent hover:underline">
+                    <Link href="tel:+1234567890" className="text-purple-400 hover:underline">
                       (123) 456-7890
                     </Link>
                   </div>
