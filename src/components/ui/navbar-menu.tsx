@@ -66,7 +66,7 @@ export const MenuItem = ({
                 layoutId="active" // layoutId ensures smooth animation
                 className={cn(
                   "backdrop-blur-sm rounded-2xl overflow-hidden border shadow-xl",
-                  isDarkMode ? "bg-black/80 border-white/10" : "bg-white/90 border-black/10"
+                  isDarkMode ? "bg-black/95 border-white/10" : "bg-white/95 border-black/10"
                 )}
               >
                 <motion.div
