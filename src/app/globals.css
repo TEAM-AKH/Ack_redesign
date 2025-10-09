@@ -79,7 +79,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: hsl(var(--accent));
+  background-color: #A855F7;
   border-radius: 6px;
   border: 3px solid #1a1a1a;
 }
