@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { LiquidGlass } from "./liquid-glass";
 
 const transition = {
   type: "spring",
@@ -63,18 +62,9 @@ export const MenuItem = ({
                     : "bg-white/90 border-black/10"
                 )}
               >
-                 <LiquidGlass
-                    className="h-full w-max p-4"
-                    containerClass="overflow-hidden rounded-2xl"
-                    frost={0.08}
-                    displace={0.03}
-                    scale={-40}
-                    rOffset={-5}
-                    gOffset={5}
-                    bOffset={-5}
-                  >
+                <div className="h-full w-max p-4">
                   {children}
-                </LiquidGlass>
+                </div>
               </motion.div>
             </div>
           )}
@@ -137,10 +127,10 @@ export const ProductItem = ({
         data-ai-hint={dataAiHint}
       />
       <div>
-        <h4 className={cn("text-xl font-bold mb-1", "text-primary dark:text-purple-300")}>
+        <h4 className={cn("text-xl font-bold mb-1", isDarkMode ? "text-white" : "text-black")}>
           {title}
         </h4>
-        <p className={cn("text-sm max-w-[10rem]", "text-primary/90 dark:text-purple-200/90")}>
+        <p className={cn("text-sm max-w-[10rem]", isDarkMode ? "text-neutral-300" : "text-neutral-700")}>
           {description}
         </p>
       </div>
@@ -153,7 +143,7 @@ export const HoveredLink = ({ children, isDarkMode, ...rest }: any) => {
     <Link
       {...rest}
       className={cn(
-        "text-primary dark:text-purple-300 hover:text-black dark:hover:text-white",
+        "text-neutral-700 dark:text-neutral-200 hover:text-black dark:hover:text-white",
         isDarkMode ? "dark:text-neutral-200" : ""
       )}
     >
