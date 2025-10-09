@@ -13,21 +13,12 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col">
-      <header className="relative pt-32 pb-16 md:pt-48 md:pb-24">
-        {heroImage && (
-            <Image
-                src={heroImage.imageUrl}
-                alt={heroImage.description}
-                fill
-                className="object-cover -z-10 opacity-10"
-                data-ai-hint={heroImage.imageHint}
-            />
-        )}
+      <header className="relative pt-32 pb-16 md:pt-48 md:pb-24 bg-black">
         <div className="container text-center">
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-primary">
             Contact Us
           </h1>
-          <p className="mx-auto max-w-[700px] text-foreground/80 md:text-xl mt-4">
+          <p className="mx-auto max-w-[700px] text-slate-300 md:text-xl mt-4">
             We&apos;d love to hear from you. Reach out with any questions,
             comments, or partnership inquiries.
           </p>
