@@ -54,7 +54,7 @@ export const HoverEffect = ({
           <Card>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
-            <div className="flex items-center text-sm text-accent mt-4 group-hover:text-white transition-colors duration-200">
+            <div className="flex items-center text-sm text-purple-500 group-hover:text-white transition-colors duration-200 mt-4">
                 Learn More <ArrowRight className="ml-2 h-4 w-4" />
             </div>
           </Card>
