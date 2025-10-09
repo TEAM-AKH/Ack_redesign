@@ -90,7 +90,7 @@ export default function EventsPage() {
                 </div>
                 <div className="p-8 flex flex-col justify-center">
                     <CardHeader>
-                        <CardTitle className="text-3xl text-accent">
+                        <CardTitle className="text-3xl text-white">
                         {featuredEvent.title}
                         </CardTitle>
                     </CardHeader>
@@ -139,7 +139,7 @@ export default function EventsPage() {
                   )}
                   <div className="p-6 flex flex-col flex-grow">
                     <CardHeader className="p-0 mb-4">
-                      <CardTitle className="text-2xl text-accent">
+                      <CardTitle className="text-2xl text-white">
                         {event.title}
                       </CardTitle>
                     </CardHeader>
@@ -155,7 +155,7 @@ export default function EventsPage() {
                       <p className="text-slate-400">{event.description}</p>
                     </CardContent>
                     <CardFooter className="p-0 mt-6">
-                      <Button asChild variant="secondary" className="bg-accent/20 text-accent hover:bg-accent/30 w-full">
+                      <Button asChild variant="secondary" className="bg-slate-800 text-slate-100 hover:bg-slate-700 w-full">
                         <Link href="#">
                           Learn More <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
