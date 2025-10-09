@@ -140,30 +140,29 @@ export default function AboutPage() {
             </div>
             <div className="mx-auto mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {teamMembers.map((member) => (
-                <div key={member.name} className="group relative text-center">
-                  <div className="overflow-hidden rounded-lg">
-                    {member.avatar && (
-                      <Image
-                        src={member.avatar.imageUrl}
-                        alt={member.name}
-                        width={400}
-                        height={400}
-                        className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        data-ai-hint={member.avatar.imageHint}
-                      />
-                    )}
-                  </div>
-                  <div className="mt-4">
-                    <h3 className="text-xl font-bold">{member.name}</h3>
+                <div key={member.name} className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20">
+                  {member.avatar && (
+                    <Image
+                      src={member.avatar.imageUrl}
+                      alt={member.name}
+                      width={400}
+                      height={400}
+                      className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      data-ai-hint={member.avatar.imageHint}
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/0 to-black/0" />
+                  <div className="absolute inset-0 flex flex-col justify-end p-6">
+                    <h3 className="text-2xl font-bold text-white">{member.name}</h3>
                     <p className="text-sm text-primary">{member.role}</p>
-                    <div className="mt-2 flex justify-center space-x-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <Link href="#" className="text-muted-foreground hover:text-primary">
+                    <div className="mt-4 flex space-x-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <Link href="#" className="text-white/80 hover:text-primary">
                         <Twitter className="h-5 w-5" />
                       </Link>
-                      <Link href="#" className="text-muted-foreground hover:text-primary">
+                      <Link href="#" className="text-white/80 hover:text-primary">
                         <Linkedin className="h-5 w-5" />
                       </Link>
-                      <Link href="#" className="text-muted-foreground hover:text-primary">
+                      <Link href="#" className="text-white/80 hover:text-primary">
                         <Github className="h-5 w-5" />
                       </Link>
                     </div>
