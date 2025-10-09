@@ -52,7 +52,7 @@ export default function AboutPage() {
 
   return (
     <div className="flex flex-col bg-background">
-      <header className="h-[60vh] flex items-center justify-center text-center bg-black">
+      <header className="h-[80vh] flex items-center justify-center text-center bg-black">
         <div className="container">
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 animate-gradient">
             We are Acknowledgement Hub
