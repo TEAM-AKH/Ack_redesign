@@ -154,8 +154,9 @@ export const HoveredLink = ({ children, isDarkMode, ...rest }: any) => {
       {...rest}
       className={cn(
         "cursor-pointer",
-        isDarkMode ? "text-white" : "text-black",
-        "hover:opacity-[0.9]"
+        isDarkMode ? "text-neutral-400" : "text-neutral-700",
+        "hover:text-primary",
+        rest.className
       )}
     >
       {children}
