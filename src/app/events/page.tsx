@@ -63,11 +63,11 @@ export default function EventsPage() {
           </p>
         </div>
       </header>
-      <main className="flex-1 bg-slate-900/90 py-12 md:py-24 lg:py-32">
+      <main className="flex-1 bg-background py-12 md:py-24 lg:py-32">
         <div className="container">
           {/* Featured Event Section */}
           <section className="mb-16 md:mb-24">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-white text-center mb-8">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary text-center mb-8">
                 Featured Event
             </h2>
             <Card className="bg-slate-900 border-slate-800 text-slate-100 grid md:grid-cols-2 overflow-hidden shadow-2xl shadow-primary/10">
@@ -117,7 +117,7 @@ export default function EventsPage() {
 
           {/* Other Events Section */}
           <section>
-             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-white text-center mb-12">
+             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-primary text-center mb-12">
                 More Upcoming Events
             </h2>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
