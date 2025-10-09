@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
@@ -18,15 +17,15 @@ export function Marquee({
   ...props
 }: MarqueeProps) {
   return (
-    <div
+    <div 
       className={cn(
-        "w-full overflow-hidden z-10",
+        "w-full overflow-hidden sm:mt-24 mt-10 z-10",
         className
-      )}
+      )} 
       {...props}
     >
-      <div className="relative flex w-full overflow-hidden py-5">
-        <div
+      <div className="relative flex w-full overflow-hidden py-3">
+        <div 
           className={cn(
             "flex w-max animate-marquee",
             pauseOnHover && "hover:[animation-play-state:paused]",
@@ -34,6 +33,7 @@ export function Marquee({
           )}
           style={{ "--duration": `${speed}s` } as React.CSSProperties}
         >
+          {children}
           {children}
         </div>
       </div>
