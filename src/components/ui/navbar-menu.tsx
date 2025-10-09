@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { LiquidGlass } from "./liquid-glass";
 
 const transition = {
   type: "spring",
@@ -62,12 +63,18 @@ export const MenuItem = ({
                     : "bg-white/90 border-black/10"
                 )}
               >
-                <motion.div
-                  layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
-                >
+                 <LiquidGlass
+                    className="h-full w-max p-4"
+                    containerClass="overflow-hidden rounded-2xl"
+                    frost={0.08}
+                    displace={0.03}
+                    scale={-40}
+                    rOffset={-5}
+                    gOffset={5}
+                    bOffset={-5}
+                  >
                   {children}
-                </motion.div>
+                </LiquidGlass>
               </motion.div>
             </div>
           )}
