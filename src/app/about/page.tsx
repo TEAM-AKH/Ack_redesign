@@ -98,8 +98,16 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-900 text-white">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-50 dark:bg-slate-900/50 text-foreground">
           <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-primary">
+                  Our Values
+                </h2>
+                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  The principles that guide our every decision and define our character.
+                </p>
+            </div>
              <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
               {values.map((value) => (
                 <Card key={value.title} className="bg-black border-slate-800 flex flex-col items-center text-center p-8 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20">
@@ -118,7 +126,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-slate-50 dark:bg-slate-900/50 text-foreground">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-background text-foreground">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
