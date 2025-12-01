@@ -11,8 +11,9 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { useRouter } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import type { Service } from '../page';
+import { useEffect, useState } from 'react';
 
 const serviceSchema = z.object({
     title: z.string().min(1, { message: "Title is required" }),
@@ -20,8 +21,13 @@ const serviceSchema = z.object({
     status: z.boolean().default(false),
 });
 
-export default function NewServicePage() {
+export default function EditServicePage() {
     const router = useRouter();
+    const params = useParams();
+    const { id } = params;
+    const serviceId = Number(id);
+    const [isMounted, setIsMounted] = useState(false);
+
     const form = useForm<z.infer<typeof serviceSchema>>({
         resolver: zodResolver(serviceSchema),
         defaultValues: {
@@ -31,15 +37,33 @@ export default function NewServicePage() {
         }
     });
 
+     useEffect(() => {
+        setIsMounted(true);
+        const storedServices: Service[] = JSON.parse(localStorage.getItem('services') || '[]');
+        if (storedServices[serviceId]) {
+            const service = storedServices[serviceId];
+            form.reset({
+                title: service.title,
+                description: service.description,
+                status: service.status === 'Active',
+            });
+        }
+    }, [serviceId, form]);
+
     const onSubmit = (values: z.infer<typeof serviceSchema>) => {
-        const newService: Service = {
+        const updatedService: Service = {
             ...values,
             status: values.status ? 'Active' : 'Inactive',
         }
         const existingServices: Service[] = JSON.parse(localStorage.getItem('services') || '[]');
-        localStorage.setItem('services', JSON.stringify([...existingServices, newService]));
+        existingServices[serviceId] = updatedService;
+        localStorage.setItem('services', JSON.stringify(existingServices));
         router.push('/admin/services');
     };
+
+    if (!isMounted) {
+        return null; // or a loading spinner
+    }
 
     return (
         <Form {...form}>
@@ -47,13 +71,13 @@ export default function NewServicePage() {
                 <div className="mx-auto grid max-w-[59rem] flex-1 auto-rows-max gap-4">
                      <div className="flex items-center gap-4">
                          <h1 className="flex-1 shrink-0 whitespace-nowrap text-xl font-semibold tracking-tight sm:grow-0">
-                            Add New Service
+                            Edit Service
                         </h1>
                         <div className="hidden items-center gap-2 md:ml-auto md:flex">
                             <Button variant="outline" size="sm" type="button" onClick={() => router.push('/admin/services')}>
                                Discard
                             </Button>
-                            <Button size="sm" type="submit">Save Service</Button>
+                            <Button size="sm" type="submit">Update Service</Button>
                         </div>
                      </div>
                      <div className="grid gap-4 md:grid-cols-[1fr_250px] lg:grid-cols-3 lg:gap-8">
@@ -61,7 +85,7 @@ export default function NewServicePage() {
                             <Card>
                                 <CardHeader>
                                     <CardTitle>Service Details</CardTitle>
-                                    <CardDescription>Provide the details for the new service.</CardDescription>
+                                    <CardDescription>Update the details for the service.</CardDescription>
                                 </CardHeader>
                                 <CardContent className='grid gap-6'>
                                     <FormField
@@ -146,7 +170,7 @@ export default function NewServicePage() {
                         <Button variant="outline" size="sm" type="button" onClick={() => router.push('/admin/services')}>
                             Discard
                         </Button>
-                        <Button size="sm" type="submit">Save Service</Button>
+                        <Button size="sm" type="submit">Update Service</Button>
                     </div>
                 </div>
             </form>

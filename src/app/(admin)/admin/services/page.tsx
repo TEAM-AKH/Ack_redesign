@@ -22,6 +22,17 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel } from '@/components/ui/dropdown-menu';
 import { useEffect, useState } from 'react';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
+import { useRouter } from 'next/navigation';
 
 const initialServices = [
     { title: "Cloud Solutions", description: "Scalable and secure cloud infrastructure.", status: "Active" },
@@ -30,79 +41,122 @@ const initialServices = [
     { title: "Data Analytics", description: "Turn data into actionable intelligence.", status: "Active" },
     { title: "Digital Marketing", description: "Expand your reach and engage your audience.", status: "Active" },
     { title: "UX/UI Design", description: "Create user-centric digital experiences.", status: "Inactive" },
-]
+];
+
+export interface Service {
+  title: string;
+  description: string;
+  status: 'Active' | 'Inactive';
+}
 
 export default function ServicesAdminPage() {
-  const [services, setServices] = useState(initialServices);
+  const [services, setServices] = useState<Service[]>([]);
+  const [isMounted, setIsMounted] = useState(false);
+  const [serviceToDelete, setServiceToDelete] = useState<number | null>(null);
+  const router = useRouter();
+
 
   useEffect(() => {
-    const newServices = JSON.parse(localStorage.getItem('services') || '[]');
-    if (newServices.length > 0) {
-      setServices(prevServices => [...prevServices, ...newServices]);
-      localStorage.removeItem('services'); // Clear after adding
+    setIsMounted(true);
+    const storedServices = localStorage.getItem('services');
+    if (storedServices) {
+      setServices(JSON.parse(storedServices));
+    } else {
+      // Initialize with default services if none in local storage
+      setServices(initialServices);
+      localStorage.setItem('services', JSON.stringify(initialServices));
     }
   }, []);
 
+  const handleDeleteService = () => {
+    if (serviceToDelete === null) return;
+    const updatedServices = services.filter((_, index) => index !== serviceToDelete);
+    setServices(updatedServices);
+    localStorage.setItem('services', JSON.stringify(updatedServices));
+    setServiceToDelete(null); // Close the dialog
+  };
+
+  if (!isMounted) {
+    return null; // or a loading spinner
+  }
+
   return (
-    <Card>
-      <CardHeader>
-        <div className="flex justify-between items-center">
-          <div>
-            <CardTitle>Services</CardTitle>
-            <CardDescription>Manage your company's services.</CardDescription>
+    <>
+      <Card>
+        <CardHeader>
+          <div className="flex justify-between items-center">
+            <div>
+              <CardTitle>Services</CardTitle>
+              <CardDescription>Manage your company's services.</CardDescription>
+            </div>
+            <Button asChild size="sm" className="gap-1">
+              <Link href="/admin/services/new">
+                  <PlusCircle className="h-4 w-4" />
+                  Add Service
+              </Link>
+            </Button>
           </div>
-          <Button asChild size="sm" className="gap-1">
-            <Link href="/admin/services/new">
-                <PlusCircle className="h-4 w-4" />
-                Add Service
-            </Link>
-          </Button>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <Table>
-            <TableHeader>
-                <TableRow>
-                    <TableHead>Title</TableHead>
-                    <TableHead className='hidden md:table-cell'>Description</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead><span className="sr-only">Actions</span></TableHead>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {services.map((service, index) => (
-                    <TableRow key={index}>
-                        <TableCell className="font-medium">{service.title}</TableCell>
-                        <TableCell className='hidden md:table-cell'>{service.description}</TableCell>
-                        <TableCell>
-                            <Badge variant={service.status === 'Active' ? 'default' : 'outline'}>
-                                {service.status}
-                            </Badge>
-                        </TableCell>
-                         <TableCell>
-                            <DropdownMenu>
-                                <DropdownMenuTrigger asChild>
-                                <Button
-                                    aria-haspopup="true"
-                                    size="icon"
-                                    variant="ghost"
-                                >
-                                    <MoreHorizontal className="h-4 w-4" />
-                                    <span className="sr-only">Toggle menu</span>
-                                </Button>
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent align="end">
-                                <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                                <DropdownMenuItem>Edit</DropdownMenuItem>
-                                <DropdownMenuItem>Delete</DropdownMenuItem>
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-                        </TableCell>
-                    </TableRow>
-                ))}
-            </TableBody>
-        </Table>
-      </CardContent>
-    </Card>
+        </CardHeader>
+        <CardContent>
+          <Table>
+              <TableHeader>
+                  <TableRow>
+                      <TableHead>Title</TableHead>
+                      <TableHead className='hidden md:table-cell'>Description</TableHead>
+                      <TableHead>Status</TableHead>
+                      <TableHead><span className="sr-only">Actions</span></TableHead>
+                  </TableRow>
+              </TableHeader>
+              <TableBody>
+                  {services.map((service, index) => (
+                      <TableRow key={index}>
+                          <TableCell className="font-medium">{service.title}</TableCell>
+                          <TableCell className='hidden md:table-cell'>{service.description}</TableCell>
+                          <TableCell>
+                              <Badge variant={service.status === 'Active' ? 'default' : 'outline'}>
+                                  {service.status}
+                              </Badge>
+                          </TableCell>
+                           <TableCell>
+                              <DropdownMenu>
+                                  <DropdownMenuTrigger asChild>
+                                  <Button
+                                      aria-haspopup="true"
+                                      size="icon"
+                                      variant="ghost"
+                                  >
+                                      <MoreHorizontal className="h-4 w-4" />
+                                      <span className="sr-only">Toggle menu</span>
+                                  </Button>
+                                  </DropdownMenuTrigger>
+                                  <DropdownMenuContent align="end">
+                                    <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                                    <DropdownMenuItem onClick={() => router.push(`/admin/services/${index}`)}>Edit</DropdownMenuItem>
+                                    <DropdownMenuItem onClick={() => setServiceToDelete(index)}>Delete</DropdownMenuItem>
+                                  </DropdownMenuContent>
+                              </DropdownMenu>
+                          </TableCell>
+                      </TableRow>
+                  ))}
+              </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+      
+      <AlertDialog open={serviceToDelete !== null} onOpenChange={(open) => !open && setServiceToDelete(null)}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogDescription>
+              This action cannot be undone. This will permanently delete this service.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={() => setServiceToDelete(null)}>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={handleDeleteService}>Delete</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    </>
   );
 }
