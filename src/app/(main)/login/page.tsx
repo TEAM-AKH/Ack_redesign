@@ -57,8 +57,8 @@ export default function LoginPage() {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col gap-4">
-            <Button type="submit" className="w-full">
-              Sign In
+            <Button asChild className="w-full">
+              <Link href="/admin">Sign In</Link>
             </Button>
           </CardFooter>
         </Card>
