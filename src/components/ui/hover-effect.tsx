@@ -1,3 +1,4 @@
+
 'use client';
 
 import { cn } from "@/lib/utils";
@@ -37,18 +38,16 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-gradient-to-r from-purple-600/60 via-purple-500/40 to-transparent block rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-gradient-to-r from-purple-500 via-fuchsia-500 to-pink-500 block rounded-3xl"
                 layoutId="hoverBackground"
-                initial={{ opacity: 0, backgroundPosition: "200% 0" }}
+                initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
-                  transition: { duration: 0.2, ease: "easeInOut" },
-                  backgroundPosition: "0% 0",
+                  transition: { duration: 0.15 },
                 }}
                 exit={{
                   opacity: 0,
-                  transition: { duration: 0.2, delay: 0.2, ease: "easeInOut" },
-                   backgroundPosition: "-200% 0",
+                  transition: { duration: 0.15, delay: 0.2 },
                 }}
               />
             )}
@@ -117,3 +116,4 @@ export const CardDescription = ({
     </p>
   );
 };
+
