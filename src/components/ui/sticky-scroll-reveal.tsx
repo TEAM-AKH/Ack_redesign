@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll, motion } from "framer-motion";
@@ -62,13 +61,12 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative flex justify-center space-x-10 rounded-md p-10"
+      className="relative p-10 grid grid-cols-1 lg:grid-cols-2 gap-10"
       ref={ref}
     >
-      <div className="div relative flex items-start px-4">
-        <div className="max-w-2xl">
+      <div className="relative">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="my-20 h-screen">
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -94,14 +92,13 @@ export const StickyScroll = ({
             </div>
           ))}
           <div className="h-40" />
-        </div>
       </div>
        <div className="hidden lg:block h-full">
-            <div className="sticky top-40 h-60 w-80 overflow-hidden rounded-md">
-                <motion.div
+            <div className="sticky top-1/2 -translate-y-1/2">
+                 <motion.div
                     style={{ background: backgroundGradient }}
                     className={cn(
-                    "h-full rounded-md bg-white",
+                    "h-60 w-80 rounded-md bg-white",
                     contentClassName
                     )}
                 >
