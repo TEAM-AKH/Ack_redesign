@@ -75,7 +75,7 @@ export default function ContactPage() {
           <h1 className="text-3xl font-bold">Contact Us</h1>
         </div>
         <p className="text-muted-foreground max-w-2xl mb-12">
-          Ready to start your next project or have a question for our team? We&apos;d love to hear from you! Fill out the
+          Ready to start your next project or have a question for our team? We'd love to hear from you! Fill out the
           form below, email us directly, or give us a call our team will get back to you as soon as possible.
         </p>
 
@@ -104,7 +104,7 @@ export default function ContactPage() {
             </div>
 
             <div className='mb-12'>
-                <h2 className="text-4xl font-bold mb-4">Let&apos;s talk ideas</h2>
+                <h2 className="text-4xl font-bold mb-4">Let's talk ideas</h2>
                 <p className="text-muted-foreground">
                     Schedule a call to discuss your project or get expert advice from our team.
                 </p>
@@ -176,9 +176,6 @@ export default function ContactPage() {
                      <div className="border-t border-slate-800 mt-4 pt-4">
                         <ContactCalendar />
                     </div>
-                    <p className='text-center text-muted-foreground mt-4 text-sm'>
-                        Powered by Cal.com
-                    </p>
                 </div>
             )}
           </div>
