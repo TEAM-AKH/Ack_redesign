@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll, motion } from "framer-motion";
@@ -94,7 +95,7 @@ export const StickyScroll = ({
           <div className="h-40" />
       </div>
        <div className="hidden lg:block h-full">
-            <div className="sticky top-1/2 -translate-y-1/2">
+            <div className="sticky top-1/4">
                  <motion.div
                     style={{ background: backgroundGradient }}
                     className={cn(
