@@ -16,6 +16,18 @@ import Link from 'next/link';
 function Navbar({ className, isDarkMode }: { className?: string, isDarkMode?: boolean }) {
   const [active, setActive] = useState<string | null>(null);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setActive(null);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const services = [
     {
       title: 'Cloud Solutions',
