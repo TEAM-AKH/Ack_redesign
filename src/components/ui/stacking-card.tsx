@@ -1,3 +1,4 @@
+
 'use client';
 import { ReactLenis } from 'lenis/react';
 import { useTransform, motion, useScroll, MotionValue } from 'framer-motion';
@@ -110,21 +111,18 @@ const Component = forwardRef<HTMLElement, ComponentRootProps>(({ projects }, ref
 
   return (
     <ReactLenis root>
-      <main className='bg-black' ref={container}>
+      <main className='bg-slate-950' ref={container}>
         <>
-          <section className='text-white h-screen w-full bg-black grid place-content-center'>
+          <section className='text-white h-screen w-full bg-slate-950 grid place-content-center'>
             <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
 
             <h1 className='text-6xl sm:text-8xl md:text-9xl px-8 font-semibold text-center tracking-tight leading-[120%] bg-gradient-to-r from-purple-400 via-primary to-purple-900 bg-clip-text text-transparent'>
               Our Products
             </h1>
-            <h1 className='text-[16vw] translate-y-20 leading-[100%] uppercase font-semibold text-center bg-gradient-to-r from-gray-400 to-gray-800 bg-clip-text text-transparent transition-all ease-linear'>
-              ui-layout
-            </h1>
           </section>
         </>
 
-        <section className='text-white w-full bg-black'>
+        <section className='text-white w-full bg-slate-950'>
           {projects.map((project, i) => {
             const targetScale = 1 - (projects.length - i) * 0.05;
             return (
@@ -143,8 +141,8 @@ const Component = forwardRef<HTMLElement, ComponentRootProps>(({ projects }, ref
           })}
         </section>
 
-        <footer className='group bg-black'>
-          <div className='bg-black h-40 relative z-10 grid place-content-center text-2xl rounded-tr-full rounded-tl-full'></div>
+        <footer className='group bg-slate-950'>
+          <div className='bg-slate-950 h-40 relative z-10 grid place-content-center text-2xl rounded-tr-full rounded-tl-full'></div>
         </footer>
       </main>
     </ReactLenis>
