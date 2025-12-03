@@ -1,4 +1,3 @@
-
 'use client'
 import { useState } from 'react';
 import { Calendar, Clock, Globe, Video, User, Mail, Plus, CheckCircle, ArrowLeft } from 'lucide-react';
@@ -74,7 +73,6 @@ const ContactCalendar = ({ onSelectTime, selectedDate, onDateChange }: { onSelec
     </div>
   );
 };
-
 
 export default function ContactPage() {
   const { toast } = useToast();
