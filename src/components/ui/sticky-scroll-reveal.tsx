@@ -62,7 +62,7 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10 p-10"
+      className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 p-10"
       ref={ref}
     >
       <div className="relative pl-12">
