@@ -62,10 +62,10 @@ export const StickyScroll = ({
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="relative p-10 grid grid-cols-1 lg:grid-cols-3 gap-10"
+      className="relative p-10 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10"
       ref={ref}
     >
-      <div className="relative lg:col-span-2">
+      <div className="relative">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20 h-screen">
               <motion.h2
@@ -75,7 +75,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100"
+                className="text-4xl font-bold text-slate-100"
               >
                 {item.title}
               </motion.h2>
@@ -86,7 +86,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg mt-10 max-w-sm text-slate-300"
+                className="text-lg mt-10 max-w-sm text-slate-300"
               >
                 {item.description}
               </motion.p>
@@ -99,7 +99,7 @@ export const StickyScroll = ({
                  <motion.div
                     style={{ background: backgroundGradient }}
                     className={cn(
-                    "h-80 w-96 rounded-md bg-white",
+                    "h-96 w-96 rounded-md bg-white",
                     contentClassName
                     )}
                 >
