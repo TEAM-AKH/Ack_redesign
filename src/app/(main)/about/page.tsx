@@ -89,7 +89,7 @@ function AboutPageClient() {
             >
               <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Our Mission</h2>
               <p className="text-lg text-slate-300 leading-relaxed">
-                To empower businesses and individuals through transformative technology, fostering a culture of continuous innovation and growth. We strive to create solutions that are not only powerful but also intuitive and accessible to all.
+                To empower businesses with intelligent, secure, and scalable technology solutions that accelerate digital transformation and unlock long-term success.
               </p>
             </motion.div>
             <motion.div
