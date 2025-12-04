@@ -37,7 +37,7 @@ export const CyberneticBentoGrid = () => {
     return (
         <div className="w-full">
             <div className="w-full max-w-6xl z-10 mx-auto">
-                <h1 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">Core Features</h1>
+                <h1 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">Explore Our Offerings</h1>
                 <div className="bento-grid">
                     <BentoItem className="col-span-2 row-span-2 flex flex-col justify-between">
                         <div>
