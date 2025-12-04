@@ -3,35 +3,35 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Lightbulb, ShieldCheck, Users, Handshake, Award, CheckCircle } from 'lucide-react';
+import { Lightbulb, ShieldCheck, Users, Code, Lock, CheckCircle } from 'lucide-react';
 
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 const coreValues = [
     {
       icon: <Lightbulb className="h-10 w-10 text-primary" />,
-      title: 'Innovation',
-      description: 'We constantly push the boundaries of technology to deliver cutting-edge solutions.'
+      title: 'Innovation at the Core',
+      description: 'We constantly push boundaries to design futuristic, AI-driven, and sustainable digital experiences.'
     },
     {
       icon: <ShieldCheck className="h-10 w-10 text-primary" />,
-      title: 'Integrity',
-      description: 'We operate with transparency and honesty in everything we do.'
+      title: 'Integrity & Trust',
+      description: 'Transparency, accountability, and reliability form the backbone of every solution we deliver.'
     },
     {
       icon: <Users className="h-10 w-10 text-primary" />,
-      title: 'Customer Centricity',
-      description: 'Our clients are at the heart of our business. Their success is our success.'
+      title: 'Customer-Centric Mindset',
+      description: 'We align our success with the success of our clients — every solution is tailor-made with measurable outcomes.'
     },
     {
-      icon: <Handshake className="h-10 w-10 text-primary" />,
-      title: 'Collaboration',
-      description: 'We believe in the power of teamwork to achieve extraordinary results.'
+      icon: <Code className="h-10 w-10 text-primary" />,
+      title: 'Engineering Excellence',
+      description: 'Our teams follow global standards, proven frameworks, and rigorous quality assurance for flawless delivery.'
     },
      {
-      icon: <Award className="h-10 w-10 text-primary" />,
-      title: 'Excellence',
-      description: 'We are committed to the highest standards of quality and performance.'
+      icon: <Lock className="h-10 w-10 text-primary" />,
+      title: 'Security by Design',
+      description: 'Every platform, every product, every deployment is infused with enterprise-grade security principles.'
     },
 ];
 
@@ -341,3 +341,5 @@ function AboutPageClient() {
 export default function AboutPage() {
     return <AboutPageClient />;
 }
+
+    
