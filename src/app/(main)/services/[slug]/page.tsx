@@ -4,11 +4,21 @@
 import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import { services } from '@/lib/services';
-import { CheckCircle, ArrowRight, Server, Code, Shield, BrainCircuit, BarChart, ShoppingCart, MessageSquare } from 'lucide-react';
+import { CheckCircle, ArrowRight, Server, Code, Shield, BrainCircuit, BarChart, ShoppingCart, MessageSquare, Bot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+
+const iconMap: { [key: string]: React.ReactNode } = {
+    Server: <Server />,
+    Code: <Code />,
+    Shield: <Shield />,
+    BrainCircuit: <BrainCircuit />,
+    BarChart: <BarChart />,
+    ShoppingCart: <ShoppingCart />,
+    Bot: <Bot />,
+};
 
 export default function ServiceDetailPage() {
   const params = useParams();
@@ -111,7 +121,7 @@ export default function ServiceDetailPage() {
                 <div className="flex flex-wrap justify-center gap-8">
                     {service.toolsTechStack.map((tool, index) => (
                         <div key={index} className="flex flex-col items-center gap-3 text-slate-300 transition-transform hover:-translate-y-2 duration-300">
-                           {tool.icon}
+                           {iconMap[tool.icon]}
                             <span className="text-sm">{tool.name}</span>
                         </div>
                     ))}

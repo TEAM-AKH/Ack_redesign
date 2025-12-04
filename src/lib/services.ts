@@ -1,6 +1,5 @@
 
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Server, Code, Shield, BrainCircuit, BarChart, ShoppingCart, Bot } from 'lucide-react';
 
 export const services = [
   {
@@ -24,12 +23,12 @@ export const services = [
         "Hybrid and Multi-Cloud Strategies",
     ],
     toolsTechStack: [
-        { name: 'AWS', icon: <Server /> },
-        { name: 'Azure', icon: <Server /> },
-        { name: 'Google Cloud', icon: <Server /> },
-        { name: 'Docker', icon: <Code /> },
-        { name: 'Kubernetes', icon: <Code /> },
-        { name: 'Terraform', icon: <Code /> },
+        { name: 'AWS', icon: 'Server' },
+        { name: 'Azure', icon: 'Server' },
+        { name: 'Google Cloud', icon: 'Server' },
+        { name: 'Docker', icon: 'Code' },
+        { name: 'Kubernetes', icon: 'Code' },
+        { name: 'Terraform', icon: 'Code' },
     ],
     whyChooseGAH: "Our certified cloud experts design and implement bespoke cloud strategies that align with your business goals. We focus on cost-optimization, security, and scalability, ensuring your cloud environment is a powerful asset, not a complex liability. With our 24/7 management, you can focus on your core business while we handle the cloud.",
     caseStudies: [
@@ -68,11 +67,11 @@ export const services = [
         "Security Audits and Compliance",
     ],
     toolsTechStack: [
-        { name: 'CrowdStrike', icon: <Shield /> },
-        { name: 'Splunk', icon: <BarChart /> },
-        { name: 'Okta', icon: <Shield /> },
-        { name: 'Nessus', icon: <Shield /> },
-        { name: 'Metasploit', icon: <Code /> },
+        { name: 'CrowdStrike', icon: 'Shield' },
+        { name: 'Splunk', icon: 'BarChart' },
+        { name: 'Okta', icon: 'Shield' },
+        { name: 'Nessus', icon: 'Shield' },
+        { name: 'Metasploit', icon: 'Code' },
     ],
     whyChooseGAH: "Our team of ethical hackers and security analysts acts as an extension of your team. We use industry-leading tools and proactive strategies to identify and neutralize threats before they can impact your business, providing you with peace of mind and robust protection.",
     caseStudies: [
@@ -111,11 +110,11 @@ export const services = [
         "AI-Powered Robotic Process Automation (RPA)",
     ],
     toolsTechStack: [
-        { name: 'Python', icon: <Code /> },
-        { name: 'TensorFlow', icon: <BrainCircuit /> },
-        { name: 'PyTorch', icon: <BrainCircuit /> },
-        { name: 'scikit-learn', icon: <BarChart /> },
-        { name: 'OpenCV', icon: <Code /> },
+        { name: 'Python', icon: 'Code' },
+        { name: 'TensorFlow', icon: 'BrainCircuit' },
+        { name: 'PyTorch', icon: 'BrainCircuit' },
+        { name: 'scikit-learn', icon: 'BarChart' },
+        { name: 'OpenCV', icon: 'Code' },
     ],
     whyChooseGAH: "We are not just data scientists; we are business problem-solvers. We partner with you to understand your challenges and apply the right AI/ML techniques to solve them. Our focus is on delivering practical, high-impact solutions that provide a clear return on investment.",
     caseStudies: [
@@ -154,11 +153,11 @@ export const services = [
         "Customer and Marketing Analytics",
     ],
     toolsTechStack: [
-        { name: 'Tableau', icon: <BarChart /> },
-        { name: 'Power BI', icon: <BarChart /> },
-        { name: 'Snowflake', icon: <Server /> },
-        { name: 'dbt', icon: <Code /> },
-        { name: 'Airflow', icon: <Code /> },
+        { name: 'Tableau', icon: 'BarChart' },
+        { name: 'Power BI', icon: 'BarChart' },
+        { name: 'Snowflake', icon: 'Server' },
+        { name: 'dbt', icon: 'Code' },
+        { name: 'Airflow', icon: 'Code' },
     ],
     whyChooseGAH: "We democratize data. Our approach is to break down data silos and empower your entire organization with self-service analytics tools. We build robust, scalable data platforms and intuitive dashboards that put actionable insights at your fingertips, fostering a culture of data-driven decision-making.",
     caseStudies: [
@@ -197,11 +196,11 @@ export const services = [
         "Marketing Automation & CRM Integration",
     ],
     toolsTechStack: [
-        { name: 'Google Analytics', icon: <BarChart /> },
-        { name: 'HubSpot', icon: <ShoppingCart /> },
-        { name: 'Salesforce', icon: <ShoppingCart /> },
-        { name: 'SEMrush', icon: <BarChart /> },
-        { name: 'Meta Ads', icon: <Code /> },
+        { name: 'Google Analytics', icon: 'BarChart' },
+        { name: 'HubSpot', icon: 'ShoppingCart' },
+        { name: 'Salesforce', icon: 'ShoppingCart' },
+        { name: 'SEMrush', icon: 'BarChart' },
+        { name: 'Meta Ads', icon: 'Code' },
     ],
     whyChooseGAH: "We are a performance-driven digital marketing agency. Every campaign we run is tracked, measured, and optimized for ROI. We combine creative storytelling with data science to create compelling campaigns that resonate with your target audience and drive measurable business growth.",
     caseStudies: [
@@ -240,11 +239,11 @@ export const services = [
         "High-Fidelity UI Design and Design Systems",
     ],
     toolsTechStack: [
-        { name: 'Figma', icon: <Code /> },
-        { name: 'Adobe XD', icon: <Code /> },
-        { name: 'Sketch', icon: <Code /> },
-        { name: 'InVision', icon: <Code /> },
-        { name: 'Miro', icon: <BrainCircuit /> },
+        { name: 'Figma', icon: 'Code' },
+        { name: 'Adobe XD', icon: 'Code' },
+        { name: 'Sketch', icon: 'Code' },
+        { name: 'InVision', icon: 'Code' },
+        { name: 'Miro', icon: 'BrainCircuit' },
     ],
     whyChooseGAH: "We believe great design is great business. Our human-centered design process puts your users at the core of every decision. We blend creativity with data-driven insights to create interfaces that are not only beautiful but also drive user engagement, satisfaction, and business results.",
     caseStudies: [
