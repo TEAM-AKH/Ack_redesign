@@ -114,38 +114,40 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3 mt-12">
               {features.map((feature) => (
-                <Card
-                  key={feature.title}
-                  className="bg-slate-900/50 border-slate-800 text-slate-100 transform transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20"
-                >
-                   {feature.image && (
-                    <CardContent className="p-0">
-                      <Image
-                        src={feature.image.imageUrl}
-                        alt={feature.image.description}
-                        width={600}
-                        height={400}
-                        className="rounded-t-lg object-cover aspect-[3/2]"
-                        data-ai-hint={feature.image.imageHint}
-                      />
+                <div key={feature.title} className="group relative">
+                  <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 opacity-0 blur transition duration-500 group-hover:opacity-75"></div>
+                  <Card
+                    className="relative h-full bg-slate-900/80 border-slate-800 text-slate-100 backdrop-blur-sm"
+                  >
+                    {feature.image && (
+                      <CardContent className="p-0">
+                        <Image
+                          src={feature.image.imageUrl}
+                          alt={feature.image.description}
+                          width={600}
+                          height={400}
+                          className="rounded-t-lg object-cover aspect-[3/2] opacity-80 group-hover:opacity-100 transition-opacity"
+                          data-ai-hint={feature.image.imageHint}
+                        />
+                      </CardContent>
+                    )}
+                    <CardHeader>
+                      <div className="flex items-center gap-4">
+                        {feature.icon}
+                        <CardTitle className="text-2xl">{feature.title}</CardTitle>
+                      </div>
+                      <CardDescription className="text-slate-300 pt-2">{feature.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <Button asChild variant="link" className="p-0 text-accent">
+                        <Link href={feature.link}>
+                          Explore {feature.title.split(' ')[1]}
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </Link>
+                      </Button>
                     </CardContent>
-                  )}
-                  <CardHeader>
-                    <div className="flex items-center gap-4">
-                      {feature.icon}
-                      <CardTitle className="text-2xl">{feature.title}</CardTitle>
-                    </div>
-                    <CardDescription className="text-slate-300 pt-2">{feature.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button asChild variant="link" className="p-0 text-accent">
-                      <Link href={feature.link}>
-                        Explore {feature.title.split(' ')[1]}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>
