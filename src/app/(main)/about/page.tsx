@@ -323,17 +323,8 @@ function AboutPageClient() {
                         Global Acknowledgment Hub (GAH) was founded with a simple belief — technology should empower, not overwhelm. In a rapidly evolving digital world, enterprises need unified, intelligent, and secure systems that can scale with their ambitions. GAH was formed to bridge this gap.
                     </p>
                     <p>
-                        We began as a technology consulting startup and quickly expanded into a multi-domain innovation hub, delivering solutions in:
+                        We began as a technology consulting startup and quickly expanded into a multi-domain innovation hub, delivering solutions worldwide.
                     </p>
-                    <ul className="list-disc list-inside space-y-2 pl-4">
-                        <li>SaaS / PaaS / DaaS</li>
-                        <li>Enterprise Cybersecurity</li>
-                        <li>AI & Machine Learning</li>
-                        <li>Digital Transformation</li>
-                        <li>SAP & Enterprise Consulting</li>
-                        <li>Custom Web and Cloud Applications</li>
-                        <li>Proprietary Product Development</li>
-                    </ul>
                     <p>
                         Today, we partner with organizations across industries to modernize, secure, and accelerate their digital journeys.
                     </p>
