@@ -57,7 +57,7 @@ const ContactCalendar = ({ onSelectTime, selectedDate, onDateChange }: { onSelec
               <Button
                 key={time}
                 variant="outline"
-                className="w-full justify-center bg-transparent border-border hover:bg-primary hover:text-primary-foreground"
+                className="w-full justify-center bg-transparent border-primary hover:bg-primary hover:text-primary-foreground"
                 onClick={() => onSelectTime(time)}
                 disabled={!selectedDate}
               >
@@ -151,7 +151,7 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <main className="bg-black text-white flex flex-col justify-center p-8 md:px-16 md:pt-16 md:pb-32">
+      <main className="bg-black text-white flex flex-col justify-center p-8 md:px-16 md:pt-16 md:pb-64">
         <div className="max-w-7xl mx-auto w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-center">
             {/* Left Column */}
@@ -162,7 +162,7 @@ export default function ContactPage() {
                             onClick={() => setActiveTab('form')}
                             className={cn(
                             "flex-1 justify-center",
-                            activeTab === 'form' ? 'bg-primary text-primary-foreground' : 'bg-transparent text-foreground'
+                            activeTab === 'form' ? 'bg-primary text-primary-foreground' : 'bg-transparent text-white'
                             )}
                         >
                             Fill Form
@@ -175,7 +175,7 @@ export default function ContactPage() {
                             }}
                             className={cn(
                             "flex-1 justify-center",
-                            activeTab === 'call' ? 'bg-primary text-primary-foreground' : 'bg-transparent text-foreground'
+                            activeTab === 'call' ? 'bg-primary text-primary-foreground' : 'bg-transparent text-white'
                             )}
                         >
                             Book A Call
@@ -202,18 +202,18 @@ export default function ContactPage() {
             {/* Right Column */}
             <div className="lg:min-h-[700px] flex flex-col justify-center">
                 {activeTab === 'form' && (
-                <form onSubmit={handleContactFormSubmit} className="space-y-6 bg-transparent border border-border p-8 rounded-lg">
+                <form onSubmit={handleContactFormSubmit} className="space-y-6 bg-transparent border border-primary p-8 rounded-lg">
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                     <Input
                         placeholder="First Name"
-                        className="bg-transparent border-border focus-visible:ring-primary/50"
+                        className="bg-transparent border-primary focus-visible:ring-primary/50"
                         value={contactForm.firstName}
                         onChange={(e) => setContactForm({...contactForm, firstName: e.target.value})}
                         required
                     />
                     <Input
                         placeholder="Last Name"
-                        className="bg-transparent border-border focus-visible:ring-primary/50"
+                        className="bg-transparent border-primary focus-visible:ring-primary/50"
                         value={contactForm.lastName}
                         onChange={(e) => setContactForm({...contactForm, lastName: e.target.value})}
                         required
@@ -222,7 +222,7 @@ export default function ContactPage() {
                     <Input
                     type="email"
                     placeholder="Email"
-                    className="bg-transparent border-border focus-visible:ring-primary/50"
+                    className="bg-transparent border-primary focus-visible:ring-primary/50"
                     value={contactForm.email}
                     onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
                     required
@@ -230,7 +230,7 @@ export default function ContactPage() {
                     <Textarea
                     placeholder="Your Message"
                     rows={6}
-                    className="bg-transparent border-border focus-visible:ring-primary/50"
+                    className="bg-transparent border-primary focus-visible:ring-primary/50"
                     value={contactForm.message}
                     onChange={(e) => setContactForm({...contactForm, message: e.target.value})}
                     required
@@ -241,7 +241,7 @@ export default function ContactPage() {
                 </form>
                 )}
                 {activeTab === 'call' && (
-                    <div className='bg-black border border-border rounded-2xl p-4'>
+                    <div className='bg-black border border-primary rounded-2xl p-4'>
                         {step === 'select-time' && (
                             <>
                             <div className='p-4'>
@@ -267,7 +267,7 @@ export default function ContactPage() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="border-t border-border mt-4 pt-4">
+                                <div className="border-t border-primary mt-4 pt-4">
                                     <ContactCalendar onSelectTime={handleTimeSelect} selectedDate={selectedDate} onDateChange={setSelectedDate} />
                                 </div>
                             </>
@@ -304,15 +304,15 @@ export default function ContactPage() {
                                 <div className="space-y-4">
                                     <div>
                                         <Label htmlFor="name" className="text-sm font-medium text-slate-300">Your name *</Label>
-                                        <Input id="name" className="bg-transparent border-border mt-1" value={bookingForm.name} onChange={(e) => setBookingForm({...bookingForm, name: e.target.value})} required/>
+                                        <Input id="name" className="bg-transparent border-primary mt-1" value={bookingForm.name} onChange={(e) => setBookingForm({...bookingForm, name: e.target.value})} required/>
                                     </div>
                                     <div>
                                         <Label htmlFor="email" className="text-sm font-medium text-slate-300">Email address *</Label>
-                                        <Input id="email" type="email" className="bg-transparent border-border mt-1" value={bookingForm.email} onChange={(e) => setBookingForm({...bookingForm, email: e.target.value})} required/>
+                                        <Input id="email" type="email" className="bg-transparent border-primary mt-1" value={bookingForm.email} onChange={(e) => setBookingForm({...bookingForm, email: e.target.value})} required/>
                                     </div>
                                     <div>
                                         <Label htmlFor="notes" className="text-sm font-medium text-slate-300">Additional notes</Label>
-                                        <Textarea id="notes" placeholder="Please share anything that will help prepare for our meeting." className="bg-transparent border-border mt-1" value={bookingForm.notes} onChange={(e) => setBookingForm({...bookingForm, notes: e.target.value})}/>
+                                        <Textarea id="notes" placeholder="Please share anything that will help prepare for our meeting." className="bg-transparent border-primary mt-1" value={bookingForm.notes} onChange={(e) => setBookingForm({...bookingForm, notes: e.target.value})}/>
                                     </div>
                                     <Button variant="ghost" className="w-full justify-start p-0 h-auto hover:bg-transparent text-slate-300 hover:text-white">
                                         <Plus className="w-4 h-4 mr-2"/> Add guests
@@ -322,7 +322,7 @@ export default function ContactPage() {
                                     By proceeding, you agree to our <a href="#" className="underline">Terms</a> and <a href="#" className="underline">Privacy Policy</a>.
                                 </p>
                                 <div className="flex justify-end gap-4 mt-6">
-                                    <Button variant="outline" onClick={handleBack} className="bg-transparent border-border" type="button">Back</Button>
+                                    <Button variant="outline" onClick={handleBack} className="bg-transparent border-primary" type="button">Back</Button>
                                     <Button type="submit">Confirm</Button>
                                 </div>
                             </div>
@@ -334,7 +334,7 @@ export default function ContactPage() {
                                 <h2 className="text-2xl font-bold text-white mb-2">Booking Confirmed!</h2>
                                 <p className="text-slate-300 mb-4">Your 30-minute meeting is scheduled.</p>
                                 <p className="text-slate-400 text-sm">A confirmation email has been sent to you.</p>
-                                <Button variant="outline" onClick={() => setStep('select-time')} className="mt-8 bg-transparent border-border">
+                                <Button variant="outline" onClick={() => setStep('select-time')} className="mt-8 bg-transparent border-primary">
                                     Schedule Another Meeting
                                 </Button>
                             </div>
@@ -348,5 +348,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-    
