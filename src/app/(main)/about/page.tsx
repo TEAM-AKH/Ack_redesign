@@ -142,7 +142,7 @@ function AboutPageClient() {
             >
               <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Our Vision</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We envision a future where technology seamlessly integrates with daily life, solving complex challenges and unlocking human potential. Our goal is to be at the forefront of this change, building a smarter, more connected world.
+                To become a globally trusted hub for acknowledgment, innovation, and next-generation digital ecosystems, setting new standards in enterprise technology delivery
               </p>
             </motion.div>
           </div>
