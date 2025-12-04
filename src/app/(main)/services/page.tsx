@@ -1,37 +1,6 @@
-import { HoverEffect } from '@/components/ui/hover-effect';
 
-const services = [
-  {
-    title: 'Cloud Solutions',
-    description: 'Scalable and secure cloud infrastructure to power your applications, ensuring reliability and performance.',
-    link: '#',
-  },
-  {
-    title: 'Cyber Security',
-    description: 'Protect your digital assets with our advanced threat detection and prevention services.',
-    link: '#',
-  },
-  {
-    title: 'AI & Machine Learning',
-    description: 'Leverage the power of AI to unlock insights, automate processes, and drive innovation.',
-    link: '#',
-  },
-  {
-    title: 'Data Analytics',
-    description: 'Turn your data into actionable intelligence with our comprehensive analytics platforms.',
-    link: '#',
-  },
-  {
-    title: 'Digital Marketing',
-    description: 'Expand your reach and engage your audience with data-driven marketing strategies.',
-    link: '#',
-  },
-  {
-    title: 'UX/UI Design',
-    description: 'Create beautiful, intuitive, and user-centric digital experiences that delight users.',
-    link: '#',
-  },
-];
+import { HoverEffect } from '@/components/ui/hover-effect';
+import { services } from '@/lib/services';
 
 export default function ServicesPage() {
   return (
@@ -49,7 +18,7 @@ export default function ServicesPage() {
       </header>
       <main className="flex-1 py-12 md:py-24 lg:py-32 bg-background">
         <div className="container">
-          <HoverEffect items={services} />
+          <HoverEffect items={services.map(s => ({...s, link: `/services/${s.slug}`}))} />
         </div>
       </main>
     </div>
