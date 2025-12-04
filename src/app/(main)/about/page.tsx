@@ -3,7 +3,9 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Lightbulb, ShieldCheck, Users, Code, Lock, CheckCircle } from 'lucide-react';
+import { Lightbulb, ShieldCheck, Users, Code, Lock, CheckCircle, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -332,6 +334,49 @@ function AboutPageClient() {
             </motion.div>
           </div>
         </section>
+        
+        <section className="bg-background text-foreground py-20 md:py-32">
+          <div className="container">
+            <div className="grid md:grid-cols-2 gap-16 items-center bg-primary/5 p-8 rounded-2xl border border-primary/20">
+                <motion.div
+                    className="md:order-2"
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">Join Our Team</h2>
+                    <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                        We are always looking for passionate and talented individuals to join our team. If you are driven by innovation and want to make an impact, we would love to hear from you.
+                    </p>
+                    <Button asChild size="lg">
+                        <Link href="/contact">
+                            View Open Positions <ArrowRight className="ml-2 h-5 w-5" />
+                        </Link>
+                    </Button>
+                </motion.div>
+                <motion.div
+                    className="relative h-80 md:h-96 md:order-1"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    {PlaceHolderImages.find(p => p.id === 'about-join-team') &&
+                        <Image
+                            src={PlaceHolderImages.find(p => p.id === 'about-join-team')!.imageUrl}
+                            alt="Join Our Team"
+                            fill
+                            objectFit="cover"
+                            className="rounded-2xl shadow-lg"
+                            data-ai-hint={PlaceHolderImages.find(p => p.id === 'about-join-team')!.imageHint}
+                        />
+                    }
+                </motion.div>
+            </div>
+          </div>
+        </section>
+
       </main>
     </div>
   );
