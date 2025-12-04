@@ -2,54 +2,9 @@
 'use client';
 
 import Image from 'next/image';
-import { Github, Linkedin, Twitter } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-
-const teamMembers = [
-  {
-    name: 'Dr. Evelyn Reed',
-    role: 'Founder & CEO',
-    avatar: PlaceHolderImages.find((img) => img.id === 'team-1'),
-    socials: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#',
-    },
-  },
-  {
-    name: 'Marcus Chen',
-    role: 'Chief Technology Officer',
-    avatar: PlaceHolderImages.find((img) => img.id === 'team-2'),
-    socials: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#',
-    },
-  },
-  {
-    name: 'Alex Rivera',
-    role: 'Director of Innovation',
-    avatar: PlaceHolderImages.find((img) => img.id === 'team-3'),
-     socials: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#',
-    },
-  },
-  {
-    name: 'Jasmine Patel',
-    role: 'Lead Product Strategist',
-    avatar: PlaceHolderImages.find((img) => img.id === 'team-4'),
-     socials: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#',
-    },
-  },
-];
 
 function AboutPageClient() {
   return (
@@ -140,41 +95,6 @@ function AboutPageClient() {
                 We envision a future where technology seamlessly integrates with daily life, solving complex challenges and unlocking human potential. Our goal is to be at the forefront of this change, building a smarter, more connected world.
               </p>
             </motion.div>
-          </div>
-        </section>
-
-        <section className="bg-background py-20 md:py-32">
-          <div className="container text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-16">Meet the Team</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  className="flex flex-col items-center"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                   {member.avatar && (
-                     <div className="relative mb-4">
-                        <Avatar className="w-32 h-32 border-4 border-primary/50 shadow-lg">
-                            <AvatarImage src={member.avatar.imageUrl} alt={member.name} data-ai-hint={member.avatar.imageHint} />
-                            <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
-                        </Avatar>
-                        <div className="absolute inset-0 rounded-full border-2 border-primary animate-pulse"></div>
-                     </div>
-                   )}
-                  <h3 className="text-xl font-bold">{member.name}</h3>
-                  <p className="text-primary">{member.role}</p>
-                   <div className="flex space-x-3 mt-4 text-muted-foreground">
-                    <a href={member.socials.twitter} className="hover:text-primary"><Twitter size={20} /></a>
-                    <a href={member.socials.linkedin} className="hover:text-primary"><Linkedin size={20} /></a>
-                    <a href={member.socials.github} className="hover:text-primary"><Github size={20} /></a>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </section>
       </main>
