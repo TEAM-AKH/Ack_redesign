@@ -73,7 +73,7 @@ function AboutPageClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mx-auto max-w-[700px] text-slate-300/80 md:text-xl mt-4">
-            Innovators, dreamers, and builders dedicated to pushing the boundaries of what&apos;s possible.
+            We are a global technology solutions company delivering intelligent digital platforms, enterprise services, and next-generation products across cloud, cybersecurity, AI/ML, and digital transformation.
           </motion.p>
         </div>
       </header>
