@@ -151,7 +151,7 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <main className="bg-black text-white flex flex-col justify-center p-8 md:p-16">
+      <main className="bg-black text-white flex flex-col justify-center p-8 md:px-16 md:pt-16 md:pb-32">
         <div className="max-w-7xl mx-auto w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-center">
             {/* Left Column */}
