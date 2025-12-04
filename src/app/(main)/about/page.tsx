@@ -36,13 +36,18 @@ const coreValues = [
 ];
 
 const domains = [
-    'Application Development',
-    'Cloud & Infrastructure',
+    'Cloud Ecosystems (IaaS, PaaS, SaaS)',
+    'Enterprise digital transformation',
     'Cybersecurity & Governance',
-    'AI & Machine Learning',
-    'Product Transformation',
-    'SAP Consulting',
-    'Performance Engineering',
+    'Cloud migration',
+    'Cyber audits, IAM, MFA, risk assessment, 360° security',
+    'AI/ML solutions',
+    'NLP, analytics, automation',
+    'SAP Transformation',
+    'Product Engineering',
+    'Application modernization',
+    'DevOps Integration',
+    'System optimization',
 ];
 
 function AboutPageClient() {
