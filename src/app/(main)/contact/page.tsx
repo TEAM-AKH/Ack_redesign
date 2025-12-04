@@ -1,7 +1,7 @@
 
 'use client'
 import { useState } from 'react';
-import { Calendar, Clock, Globe, Video, User, Mail, Plus, CheckCircle, ArrowLeft } from 'lucide-react';
+import { Calendar, Clock, Globe, Video, Plus, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -151,7 +151,7 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <main className="bg-background text-foreground flex flex-col justify-center p-8 md:px-16 md:py-24">
+      <main className="bg-background text-foreground flex flex-col justify-center p-8 md:px-16 md:pt-24 md:pb-32">
         <div className="max-w-7xl mx-auto w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-center">
             {/* Left Column */}
@@ -241,10 +241,10 @@ export default function ContactPage() {
                                         <Avatar>
                                             <AvatarFallback className='bg-primary text-primary-foreground'>T</AvatarFallback>
                                         </Avatar>
-                                        <span className='text-muted-foreground'>Team - Global Acknowledgment</span>
+                                        <span className='text-slate-300'>Team - Global Acknowledgment</span>
                                     </div>
                                     <h2 className='text-3xl font-bold text-white mb-2'>30 Min Meeting</h2>
-                                    <div className='space-y-2 text-muted-foreground'>
+                                    <div className='space-y-2 text-slate-300'>
                                         <div className='flex items-center gap-2'>
                                             <Clock className='w-4 h-4' />
                                             <span>30m</span>
@@ -259,7 +259,7 @@ export default function ContactPage() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="border-t border-border mt-4 pt-4">
+                                <div className="border-t border-slate-700 mt-4 pt-4">
                                     <ContactCalendar onSelectTime={handleTimeSelect} selectedDate={selectedDate} onDateChange={setSelectedDate} />
                                 </div>
                             </>
@@ -271,10 +271,10 @@ export default function ContactPage() {
                                     <Avatar>
                                         <AvatarFallback className='bg-primary text-primary-foreground'>T</AvatarFallback>
                                     </Avatar>
-                                    <span className='text-muted-foreground'>Team - Global Acknowledgment</span>
+                                    <span className='text-slate-300'>Team - Global Acknowledgment</span>
                                 </div>
                                 <h2 className="text-2xl font-bold text-white mb-2">30 Min Meeting</h2>
-                                <div className="space-y-2 text-muted-foreground mb-6">
+                                <div className="space-y-2 text-slate-300 mb-6">
                                     <div className='flex items-center gap-2'>
                                         <Calendar className='w-4 h-4' />
                                         <span>{selectedTime}, {format(selectedDate, 'EEEE, MMMM d, yyyy')}</span>
@@ -306,11 +306,11 @@ export default function ContactPage() {
                                         <Label htmlFor="notes" className="text-sm font-medium text-white">Additional notes</Label>
                                         <Textarea id="notes" placeholder="Please share anything that will help prepare for our meeting." value={bookingForm.notes} onChange={(e) => setBookingForm({...bookingForm, notes: e.target.value})} className="bg-background text-foreground"/>
                                     </div>
-                                    <Button variant="ghost" className="w-full justify-start p-0 h-auto hover:bg-transparent text-muted-foreground hover:text-white">
+                                    <Button variant="ghost" className="w-full justify-start p-0 h-auto hover:bg-transparent text-slate-300 hover:text-white">
                                         <Plus className="w-4 h-4 mr-2"/> Add guests
                                     </Button>
                                 </div>
-                                <p className="text-xs text-muted-foreground mt-6">
+                                <p className="text-xs text-slate-400 mt-6">
                                     By proceeding, you agree to our <a href="#" className="underline">Terms</a> and <a href="#" className="underline">Privacy Policy</a>.
                                 </p>
                                 <div className="flex justify-end gap-4 mt-6">
@@ -324,8 +324,8 @@ export default function ContactPage() {
                             <div className="p-12 text-center flex flex-col items-center justify-center h-[400px]">
                                 <CheckCircle className="w-16 h-16 text-green-500 mb-4" />
                                 <h2 className="text-2xl font-bold text-white mb-2">Booking Confirmed!</h2>
-                                <p className="text-muted-foreground mb-4">Your 30-minute meeting is scheduled.</p>
-                                <p className="text-muted-foreground text-sm">A confirmation email has been sent to you.</p>
+                                <p className="text-slate-300 mb-4">Your 30-minute meeting is scheduled.</p>
+                                <p className="text-slate-400 text-sm">A confirmation email has been sent to you.</p>
                                 <Button variant="outline" onClick={() => setStep('select-time')} className="mt-8 text-white border-white/50 bg-transparent hover:bg-white hover:text-black">
                                     Schedule Another Meeting
                                 </Button>
