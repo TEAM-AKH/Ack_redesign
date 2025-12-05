@@ -149,7 +149,7 @@ export const products = [
       title: 'Hashtagger',
       shortTitle: '“Endless Limits. Endless privacy.”',
       slug: 'hashtagger',
-      description: 'An AI-powered tool to generate, analyze, and manage hashtags for social media to maximize reach and engagement.',
+      description: 'Hashtagger is a next-generation social platform built around hashtags, empowering users to explore their interests, connect through meaningful circles, and share content without sacrificing privacy. With AI-assisted features, multi-format content options, and a clean, distraction-free interface, Hashtagger offers a modern social experience that is both powerful and deeply secure.',
       link: 'https://images.unsplash.com/photo-1599507593498-27c936798797?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxoYXNodGFnfGVufDB8fHx8MTc2NTU3NzQ1N3ww&ixlib-rb-4.1.0&q=80&w=1080',
       color: '#00c7b2',
       releaseDate: 'May 2024',
@@ -180,4 +180,3 @@ export const products = [
       ],
     }
   ];
-
