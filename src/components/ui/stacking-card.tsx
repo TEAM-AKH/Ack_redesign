@@ -4,34 +4,39 @@ import { ReactLenis } from 'lenis/react';
 import { useTransform, motion, useScroll, MotionValue } from 'framer-motion';
 import { useRef, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 interface ProjectData {
+  id: number;
   title: string;
   description: string;
   link: string;
   color: string;
+  slug: string;
 }
 
 interface CardProps {
   i: number;
   title: string;
   description: string;
-  url: string;
+  slug: string;
   color: string;
   progress: MotionValue<number>;
   range: [number, number];
   targetScale: number;
+  imageUrl: string;
 }
 
 export const Card = ({
   i,
   title,
   description,
-  url,
+  slug,
   color,
   progress,
   range,
   targetScale,
+  imageUrl,
 }: CardProps) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -60,13 +65,12 @@ export const Card = ({
           <div className={`w-[40%] relative top-[10%]`}>
             <p className='text-sm'>{description}</p>
             <span className='flex items-center gap-2 pt-2'>
-              <a
-                href={'#'}
-                target='_blank'
+              <Link
+                href={`/products/${slug}`}
                 className='underline cursor-pointer'
               >
                 See more
-              </a>
+              </Link>
               <svg
                 width='22'
                 height='12'
@@ -89,7 +93,7 @@ export const Card = ({
               className={`w-full h-full`}
               style={{ scale: imageScale }}
             >
-              <img src={url} alt='image' className='absolute inset-0 w-full h-full object-cover' />
+              <img src={imageUrl} alt='image' className='absolute inset-0 w-full h-full object-cover' />
             </motion.div>
           </div>
         </div>
@@ -119,10 +123,11 @@ const Component = forwardRef<HTMLElement, ComponentRootProps>(({ projects }, ref
               <Card
                 key={`p_${i}`}
                 i={i}
-                url={project.link}
+                imageUrl={project.link}
                 title={project.title}
                 color={project.color}
                 description={project.description}
+                slug={project.slug}
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}

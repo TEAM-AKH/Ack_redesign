@@ -3,37 +3,19 @@
 import React from 'react';
 import Component from '@/components/ui/stacking-card';
 import { RadialOrbitalTimelineDemo } from '@/components/ui/radial-orbital-timeline-demo';
+import { products } from '@/lib/products';
 
-const projects = [
-  {
-    title: 'TMS - Team Management System',
-    description:
-      'A comprehensive tool for managing teams, tasks, and project workflows efficiently.',
-    link: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NTk3NzQzNDd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    color: '#5196fd',
-  },
-  {
-    title: 'RMS - Resource Management System',
-    description:
-      'Optimize resource allocation, track utilization, and forecast needs with our powerful RMS.',
-    link: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyZXNvdXJjZSUyMG1hbmFnZW1lbnR8ZW58MHx8fHwxNzY1NTc3MTEyfDA&ixlib-rb-4.1.0&q=80&w=1080',
-    color: '#8f89ff',
-  },
-  {
-    title: 'WFx - Wolfronix',
-    description:
-      'An innovative platform for next-generation workflow automation and integration.',
-    link: 'https://images.unsplash.com/photo-1611095790444-1dfa3c8a1f2w?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b3JrZmxvdyUyMGF1dG9tYXRpb258ZW58MHx8fHwxNzY1NTc3MTM4fDA&ixlib-rb-4.1.0&q=80&w=1080',
-    color: '#13006c',
-  },
-  {
-    title: 'CST - Customer Support Tool',
-    description:
-      'Enhance customer satisfaction with a streamlined and intelligent support ticketing system.',
-    link: 'https://images.unsplash.com/photo-1611095782313-0b0a8f3c7f4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHN1cHBvcnR8ZW58MHx8fHwxNzY1NTc3MTY1fDA&ixlib-rb-4.1.0&q=80&w=1080',
-    color: '#ed649e',
-  },
-];
+const timelineData = products.map(p => ({
+    id: p.id,
+    title: p.shortTitle,
+    date: p.releaseDate,
+    content: p.description,
+    category: p.category,
+    icon: p.icon,
+    relatedIds: [],
+    status: "completed" as const,
+    energy: 100,
+}))
 
 export default function ProductsPage() {
   return (
@@ -45,10 +27,10 @@ export default function ProductsPage() {
         </h1>
       </section>
       <section>
-        <RadialOrbitalTimelineDemo />
+        <RadialOrbitalTimelineDemo timelineData={timelineData} />
       </section>
       <section>
-        <Component projects={projects} />
+        <Component projects={products} />
       </section>
     </>
   );
