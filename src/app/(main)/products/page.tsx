@@ -2,8 +2,8 @@
 'use client';
 import React from 'react';
 import Component from '@/components/ui/stacking-card';
-import { RadialOrbitalTimelineDemo } from '@/components/ui/radial-orbital-timeline-demo';
 import { products } from '@/lib/products';
+import { ArcFeatureReveal } from '@/components/ui/arc-feature-reveal';
 
 const timelineData = products.map(p => ({
     id: p.id,
@@ -28,7 +28,7 @@ export default function ProductsPage() {
         </h1>
       </section>
       <section>
-        <RadialOrbitalTimelineDemo timelineData={timelineData} />
+        <ArcFeatureReveal />
       </section>
       <section>
         <Component projects={products} />
