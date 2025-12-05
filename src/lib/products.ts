@@ -144,4 +144,39 @@ export const products = [
           { title: "Online retailer reduces response time by 50%", description: "By implementing CST and its AI features, a retailer was able to handle a higher volume of tickets with the same team size.", link: "#" },
       ],
     },
+    {
+      id: 5,
+      title: 'Hashtagger',
+      shortTitle: '“Amplify Your Reach.”',
+      slug: 'hashtagger',
+      description: 'An AI-powered tool to generate, analyze, and manage hashtags for social media to maximize reach and engagement.',
+      link: 'https://images.unsplash.com/photo-1599507593498-27c936798797?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxoYXNodGFnfGVufDB8fHx8MTc2NTU3NzQ1N3ww&ixlib=rb-4.1.0&q=80&w=1080',
+      color: '#00c7b2',
+      releaseDate: 'May 2024',
+      category: 'Social Media',
+      icon: Hash,
+      fullDescription: 'Hashtagger uses AI to analyze trending topics, competitor performance, and audience behavior to recommend the most effective hashtags for your social media posts. Track performance and optimize your strategy for maximum visibility.',
+      features: [
+        'AI-powered hashtag generation',
+        'Performance analytics and tracking',
+        'Competitor analysis',
+        'Hashtag set management',
+      ],
+      problemStatement: "Brands struggle to keep up with ever-changing trends and algorithms on social media, making it difficult to choose effective hashtags that drive engagement and reach their target audience.",
+      solutionsOffered: [
+          "Automated hashtag suggestions tailored to your content.",
+          "Real-time analytics on hashtag performance.",
+          "Identification of niche and trending hashtags.",
+          "Organization of hashtags into reusable sets.",
+      ],
+      toolsTechStack: [
+          { name: 'Next.js', icon: 'Code' },
+          { name: 'Python', icon: 'Code' },
+          { name: 'FastAPI', icon: 'Server' },
+          { name: 'MongoDB', icon: 'Server' },
+      ],
+      caseStudies: [
+          { title: "Influencer grows engagement by 150%", description: "A lifestyle influencer used Hashtagger to optimize their Instagram posts, resulting in a 150% increase in engagement and a 50% growth in followers in 3 months.", link: "#" },
+      ],
+    }
   ];
