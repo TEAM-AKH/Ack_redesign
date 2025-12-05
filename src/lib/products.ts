@@ -8,7 +8,7 @@ export const products = [
       title: 'TMS - Team Management System',
       shortTitle: '"Manage better . Perform Smarter"',
       slug: 'tms-team-management-system',
-      description: 'One workspace for every team. T.M.S brings structure, clarity, and transparency to team operations by centralizing tasks, projects, meetings, and performance insights into one unified system. Every role — from employees to managers and clients — gets a clear, role-specific view of their responsibilities. T.M.S eliminates manual follow-ups, improves collaboration, and gives organizations a smarter way to manage work at scale.',
+      description: 'T.M.S brings structure, clarity, and transparency to team operations by centralizing tasks, projects, meetings, and performance insights into one unified system. Every role — from employees to managers and clients — gets a clear, role-specific view of their responsibilities. T.M.S eliminates manual follow-ups, improves collaboration, and gives organizations a smarter way to manage work at scale.',
       link: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NTk3NzQzNDd8MA&ixlib-rb-4.1.0&q=80&w=1080',
       color: '#5196fd',
       releaseDate: 'Jan 2024',
@@ -145,10 +145,4 @@ export const products = [
       ],
     },
   ];
-
-
-
-
-
-
 
