@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Calendar, Code, FileText, User, Clock } from "lucide-react";
@@ -39,25 +40,14 @@ const timelineData = [
   },
   {
     id: 4,
-    title: "Testing",
-    date: "Apr 2024",
-    content: "User testing and bug fixes.",
-    category: "Testing",
-    icon: User,
-    relatedIds: [3, 5],
-    status: "pending" as const,
-    energy: 30,
-  },
-  {
-    id: 5,
     title: "Release",
     date: "May 2024",
     content: "Final deployment and release.",
     category: "Release",
     icon: Clock,
-    relatedIds: [4],
+    relatedIds: [3],
     status: "pending" as const,
-    energy: 10,
+    energy: 30,
   },
 ];
 
