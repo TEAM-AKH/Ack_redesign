@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Component from '@/components/ui/stacking-card';
+import { RadialOrbitalTimelineDemo } from '@/components/ui/radial-orbital-timeline-demo';
 
 const projects = [
   {
@@ -21,7 +22,7 @@ const projects = [
     title: 'NeuroLink VR',
     description:
       'Immersive virtual reality headset with neural feedback for unparalleled realism.',
-    link: 'https://images.unsplash.com/photo-1615829386703-e2bb66a7cb7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGVjdHJpYyUyMGNhcnxlbnwwfHx8fDE3NTk3NzY2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    link: 'https://images.unsplash.com/photo-1615829386703-e2bb66a7cb7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGVjdHJpYyUyMGNhcnxlbnwwfHx8fDE3NTk3NzY2MzV8MA&ixlib-rb-4.1.0&q=80&w=1080',
     color: '#13006c',
   },
   {
@@ -42,6 +43,13 @@ const projects = [
 
 export default function ProductsPage() {
   return (
-    <Component projects={projects} />
+    <>
+      <section>
+        <Component projects={projects} />
+      </section>
+      <section>
+        <RadialOrbitalTimelineDemo />
+      </section>
+    </>
   );
 }
