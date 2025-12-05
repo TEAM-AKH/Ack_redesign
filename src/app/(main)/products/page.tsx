@@ -1,3 +1,4 @@
+
 'use client';
 import React from 'react';
 import Component from '@/components/ui/stacking-card';
@@ -22,7 +23,7 @@ const projects = [
     title: 'NeuroLink VR',
     description:
       'Immersive virtual reality headset with neural feedback for unparalleled realism.',
-    link: 'https://images.unsplash.com/photo-1615829386703-e2bb66a7cb7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGVjdHJpYyUyMGNhcnxlbnwwfHx8fDE3NTk3NzY2MzV8MA&ixlib-rb-4.1.0&q=80&w=1080',
+    link: 'https://images.unsplash.com/photo-1615829386703-e2bb66a7cb7d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGVjdHJpYyUyMGNhcnxlbnwwfHx8fDE3NTk3NzY2MzV8MA&ixlib=rb-4.1.0&q=80&w=1080',
     color: '#13006c',
   },
   {
@@ -44,6 +45,12 @@ const projects = [
 export default function ProductsPage() {
   return (
     <>
+      <section className='text-white h-screen w-full bg-slate-950 grid place-content-center'>
+        <div className='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'></div>
+        <h1 className='text-6xl sm:text-8xl md:text-9xl px-8 font-semibold text-center tracking-tight leading-[120%] bg-gradient-to-r from-purple-400 via-primary to-purple-900 bg-clip-text text-transparent'>
+          Our Products
+        </h1>
+      </section>
       <section>
         <Component projects={projects} />
       </section>
