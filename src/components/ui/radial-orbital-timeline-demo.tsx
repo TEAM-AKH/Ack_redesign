@@ -45,20 +45,9 @@ const timelineData = [
     content: "Wolfronix: An innovative platform for next-generation workflow automation and integration.",
     category: "Release",
     icon: Clock,
-    relatedIds: [1, 3, 5],
+    relatedIds: [1, 3],
     status: "pending" as const,
     energy: 30,
-  },
-  {
-    id: 5,
-    title: "HashTagger",
-    date: "June 2024",
-    content: "A social media tool to discover, manage, and analyze trending hashtags for maximum reach.",
-    category: "Marketing",
-    icon: User,
-    relatedIds: [4],
-    status: "pending" as const,
-    energy: 20,
   }
 ];
 
