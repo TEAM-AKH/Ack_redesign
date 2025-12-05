@@ -61,7 +61,7 @@ export const Card = ({
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className={`flex flex-col relative -top-[25%] h-[450px] w-[70%] rounded-md p-10 origin-top`}
+        className={`flex flex-col relative -top-[25%] h-[450px] w-[80%] rounded-md p-10 origin-top`}
       >
         <h2 className='text-2xl text-center font-semibold'>{title}</h2>
         <div className={`flex h-full mt-5 gap-10`}>
