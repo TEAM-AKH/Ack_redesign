@@ -16,7 +16,7 @@ const projects = [
     title: 'HoloWatch',
     description:
       'A revolutionary smartwatch featuring a holographic interface and advanced biometrics.',
-    link: 'https://images.unsplash.com/photo-1617802690992-15d93263d3a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx2aXJ0dWFsJTIwcmVhbGl0eXxlbnwwfHx8fDE3NTk3NTY4OTB8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    link: 'https://images.unsplash.com/photo-1617802690992-15d93263d3a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx2aXJ0dWFsJTIwcmVhbGl0eXxlbnwwfHx8fDE3NTk3NTY4OTB8MA&ixlib-rb-4.1.0&q=80&w=1080',
     color: '#8f89ff',
   },
   {
@@ -37,7 +37,7 @@ const projects = [
     title: 'Atlas Companion Bot',
     description:
       'A personal robotic assistant designed to help with daily tasks and organization.',
-    link: 'https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1OTcyMjIzMXww&ixlib=rb-4.1.0&q=80&w=1080',
+    link: 'https://images.unsplash.com/photo-1534723328310-e82dad3ee43f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhcnRpZmljaWFsJTIwaW50ZWxsaWdlbmNlfGVufDB8fHx8MTc1OTcyMjIzMXww&ixlib-rb-4.1.0&q=80&w=1080',
     color: '#fd521a',
   },
 ];
@@ -52,10 +52,10 @@ export default function ProductsPage() {
         </h1>
       </section>
       <section>
-        <Component projects={projects} />
+        <RadialOrbitalTimelineDemo />
       </section>
       <section>
-        <RadialOrbitalTimelineDemo />
+        <Component projects={projects} />
       </section>
     </>
   );
