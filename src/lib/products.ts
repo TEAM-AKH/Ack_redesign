@@ -79,7 +79,7 @@ export const products = [
       title: 'WFx -  Wolfronix',
       shortTitle: '“Encrypt Once . Trust Forever.”',
       slug: 'wfx-wolfronix',
-      description: 'An innovative platform for next-generation workflow automation and integration.',
+      description: 'W.F.X is a robust multi-layer security platform designed to safeguard digital systems with strong access controls, integrity monitoring, and privacy protection. It acts as a foundational shield for modern organizations, ensuring sensitive data remains secure and compliant while adapting seamlessly as infrastructures grow and evolve.',
       link: 'https://images.unsplash.com/photo-1611095790444-1dfa3c8a1f2w?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b3JrZmxvdyUyMGF1dG9tYXRpb258ZW58MHx8fHwxNzY1NTc3MTM4fDA&ixlib-rb-4.1.0&q=80&w=1080',
       color: '#13006c',
       releaseDate: 'Mar 2024',
@@ -180,3 +180,4 @@ export const products = [
       ],
     }
   ];
+
