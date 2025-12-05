@@ -114,7 +114,7 @@ export const products = [
       title: 'CST - Customer Support Tool',
       shortTitle: '“Encrypt Once . Trust Forever.”',
       slug: 'cst-customer-support-tool',
-      description: 'Enhance customer satisfaction with a streamlined and intelligent support ticketing system.',
+      description: 'C.S.T streamlines customer support by organizing service requests into clear, trackable tickets that guide both agents and customers through the entire resolution journey. With structured communication, real-time updates, and easy follow-up flows, C.S.T ensures faster responses, transparent progress, and a smoother support experience for teams and clients alike.',
       link: 'https://images.unsplash.com/photo-1611095782313-0b0a8f3c7f4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHN1cHBvcnR8ZW58MHx8fHwxNzY1NTc3MTY1fDA&ixlib-rb-4.1.0&q=80&w=1080',
       color: '#ed649e',
       releaseDate: 'Apr 2024',
