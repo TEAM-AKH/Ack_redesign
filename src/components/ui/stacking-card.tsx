@@ -9,6 +9,7 @@ import Link from 'next/link';
 interface ProjectData {
   id: number;
   title: string;
+  shortTitle: string;
   description: string;
   link: string;
   color: string;
@@ -18,6 +19,7 @@ interface ProjectData {
 interface CardProps {
   i: number;
   title: string;
+  shortTitle: string;
   description: string;
   slug: string;
   color: string;
@@ -30,6 +32,7 @@ interface CardProps {
 export const Card = ({
   i,
   title,
+  shortTitle,
   description,
   slug,
   color,
@@ -63,6 +66,7 @@ export const Card = ({
         <h2 className='text-2xl text-center font-semibold'>{title}</h2>
         <div className={`flex h-full mt-5 gap-10`}>
           <div className={`w-[40%] relative top-[10%]`}>
+            <h3 className="font-bold mb-2">{shortTitle}</h3>
             <p className='text-sm'>{description}</p>
             <span className='flex items-center gap-2 pt-2'>
               <Link
@@ -125,6 +129,7 @@ const Component = forwardRef<HTMLElement, ComponentRootProps>(({ projects }, ref
                 i={i}
                 imageUrl={project.link}
                 title={project.title}
+                shortTitle={project.shortTitle}
                 color={project.color}
                 description={project.description}
                 slug={project.slug}
