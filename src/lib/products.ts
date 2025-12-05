@@ -6,7 +6,7 @@ export const products = [
     {
       id: 1,
       title: 'TMS - Team Management System',
-      shortTitle: "'Manage better . Perform Smarter'",
+      shortTitle: '"Manage better . Perform Smarter"',
       slug: 'tms-team-management-system',
       description: 'A comprehensive tool for managing teams, tasks, and project workflows efficiently.',
       link: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3NTk3NzQzNDd8MA&ixlib-rb-4.1.0&q=80&w=1080',
@@ -145,6 +145,7 @@ export const products = [
       ],
     },
   ];
+
 
 
 
