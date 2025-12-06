@@ -64,7 +64,7 @@ export function ArcFeatureReveal() {
             <div className="relative w-full max-w-7xl flex items-center justify-center gap-8">
 
                 {/* Left Side: Arc & Features */}
-                <div className="relative w-[500px] h-[600px] flex items-center justify-end">
+                <div className="relative w-[400px] h-[600px] flex items-center justify-end">
                     {/* The Arc SVG */}
                     {/* Positioned at the right edge of this container, curving towards the left */}
                     <div className="absolute right-[-60px] top-1/2 -translate-y-1/2 w-[300px] h-[600px] pointer-events-none z-0">
@@ -104,7 +104,7 @@ export function ArcFeatureReveal() {
 
                             // We want the items to be positioned relative to the container
                             // The SVG is at right: -60px.
-                            const rightOffset = 300 - curveX - 100; // Adjust for SVG position
+                            const rightOffset = 200 - curveX; // Adjust for SVG position
                             const isActive = activeFeature === index;
 
                             return (
@@ -248,7 +248,7 @@ export function ArcFeatureReveal() {
                 </div>
 
                 {/* Right Side: Local / Global Reveal */}
-                <div className="relative w-[300px] h-[600px] flex items-center">
+                <div className="relative w-[400px] h-[600px] flex items-center">
                     <AnimatePresence>
                         {isExpanded && (
                             <>
@@ -323,3 +323,5 @@ export function ArcFeatureReveal() {
         </div>
     );
 }
+
+    
