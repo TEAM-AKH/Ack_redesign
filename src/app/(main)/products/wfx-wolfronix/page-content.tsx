@@ -6,6 +6,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CheckCircle, Users, Eye, Zap, ArrowRight, ShieldCheck, Lock, Layers } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import CyberMatrixHero from '@/components/ui/cyber-matrix-hero';
+import { Timeline } from '@/components/ui/timeline';
 
 const whyChooseWfx = [
     {
@@ -32,24 +34,20 @@ const whyChooseWfx = [
 
 const howItWorks = [
     {
-        step: 1,
-        title: 'Integrate with Your Environment',
-        description: 'W.F.X plugs into your existing architecture.'
+        title: 'Step 1: Integrate',
+        content: <p className="text-slate-300">W.F.X plugs into your existing architecture.</p>
     },
     {
-        step: 2,
-        title: 'Apply Layered Controls',
-        description: 'Access controls, privacy guardrails, and integrity checks.'
+        title: 'Step 2: Apply',
+        content: <p className="text-slate-300">Access controls, privacy guardrails, and integrity checks.</p>
     },
     {
-        step: 3,
-        title: 'Monitor & Alert',
-        description: 'The system observes critical events and surfaces risks.'
+        title: 'Step 3: Monitor',
+        content: <p className="text-slate-300">The system observes critical events and surfaces risks.</p>
     },
     {
-        step: 4,
-        title: 'Continuously Improve',
-        description: 'Use insights to strengthen your security posture over time.'
+        title: 'Step 4: Improve',
+        content: <p className="text-slate-300">Use insights to strengthen your security posture over time.</p>
     },
 ];
 
@@ -81,41 +79,7 @@ export function WfxPageContent() {
   return (
     <div className="flex flex-col bg-black text-white">
       {/* Hero Section */}
-      <header className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
-        <div className="absolute inset-0 bg-grid-white/[0.05] [mask-image:radial-gradient(ellipse_100%_50%_at_50%_50%,#000_60%,transparent_100%)]"></div>
-        <div className="relative container z-10">
-            <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-accent animate-gradient">
-                W.F.X – Security in every layer.
-            </motion.h1>
-            <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="mx-auto max-w-[800px] text-slate-300/80 md:text-xl mt-6">
-                W.F.X by Wolfronix is a multi-layer security foundation that protects your data, access, and operations. It is designed for organizations that treat security as a core requirement, not an afterthought.
-            </motion.p>
-            <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="flex gap-4 justify-center mt-8">
-                    <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-                        <Link href="/contact">
-                            Talk to Security Team
-                        </Link>
-                    </Button>
-                    <Button asChild size="lg" variant="outline" className="text-white border-white/50 bg-transparent hover:bg-white hover:text-black">
-                        <Link href="#use-cases">
-                            View Capabilities
-                        </Link>
-                    </Button>
-            </motion.div>
-        </div>
-      </header>
+      <CyberMatrixHero />
 
       <main className="py-20 md:py-24">
         <div className="container space-y-24">
@@ -147,29 +111,9 @@ export function WfxPageContent() {
             {/* How It Works */}
             <section>
                  <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-primary mb-4">How It Works</h2>
+                    <h2 className="text-5xl font-bold text-neutral-500 mb-4">How It Works</h2>
                 </div>
-                <div className="relative grid md:grid-cols-4 gap-8">
-                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/20 -translate-y-1/2 hidden md:block"></div>
-                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent hidden md:block" style={{clipPath: 'polygon(0 0, 50% 0, 50% 100%, 0 100%)'}}></div>
-
-                    {howItWorks.map((step, index) => (
-                         <motion.div 
-                            key={index}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.5 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative bg-slate-900 p-6 rounded-2xl border border-slate-800"
-                        >
-                            <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl border-4 border-black">
-                                {step.step}
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3 mt-8">{step.title}</h3>
-                            <p className="text-slate-400">{step.description}</p>
-                        </motion.div>
-                    ))}
-                </div>
+                <Timeline data={howItWorks} />
             </section>
 
             {/* Features */}
