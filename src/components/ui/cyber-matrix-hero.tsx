@@ -58,7 +58,7 @@ const CyberMatrixHero = () => {
             if (!grid) return;
             grid.innerHTML = '';
             
-            const size = 60; // Made tiles smaller for a denser grid
+            const size = 30; // Made tiles smaller for a denser grid
             columns = Math.floor(window.innerWidth / size);
             rows = Math.floor(window.innerHeight / size);
             
@@ -197,7 +197,7 @@ const CyberMatrixHero = () => {
                     justify-content: center;
                     align-items: center;
                     font-family: 'Courier New', Courier, monospace;
-                    font-size: 1.2rem;
+                    font-size: 0.8rem;
                     
                     /* Use CSS variable for dynamic styling */
                     opacity: calc(0.1 + var(--intensity) * 0.9);
