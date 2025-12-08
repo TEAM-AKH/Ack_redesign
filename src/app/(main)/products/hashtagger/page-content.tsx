@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CheckCircle, Users, Eye, Zap, ArrowRight, Hash, Shield, Mic, Image as ImageIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { QuantumTimeline } from '@/components/ui/premium-process-timeline';
 
 const whyChooseHashtagger = [
     {
@@ -183,6 +184,14 @@ export function HashtaggerPageContent() {
                         </motion.div>
                     ))}
                 </div>
+            </section>
+
+             <section className="bg-background text-foreground py-20 md:py-24">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-bold text-primary mb-4">Our Process</h2>
+                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto">We follow a structured and transparent process to ensure the successful delivery of every project, from initial discovery to final launch and beyond.</p>
+                </div>
+                <QuantumTimeline />
             </section>
 
             {/* Features */}
