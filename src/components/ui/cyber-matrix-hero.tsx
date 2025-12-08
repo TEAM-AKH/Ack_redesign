@@ -91,11 +91,11 @@ const CyberMatrixHero = () => {
                             tile.classList.add('highlight');
                             setTimeout(() => {
                                 tile.classList.remove('highlight');
-                            }, 1500); // Highlight for 1.5 seconds
+                            }, 1000); // Highlight for 1 second
                         }
                     }
                 }
-            }, 1000); // highlight every 1 second
+            }, 500); // highlight every 0.5 seconds
             
             return () => clearInterval(highlightInterval);
         }
@@ -209,7 +209,7 @@ const CyberMatrixHero = () => {
             `}</style>
 
             {/* Overlay HTML Content */}
-            <div className="relative z-10 text-center p-6 bg-black/60 backdrop-blur-md rounded-xl border border-white/10">
+            <div className="relative z-10 text-center p-6 bg-black rounded-xl border border-white/10">
                 <motion.div
                     custom={0}
                     variants={fadeUpVariants}
