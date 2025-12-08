@@ -6,8 +6,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CheckCircle, Users, Eye, Zap, ArrowRight, Hash, Shield, Mic, Image as ImageIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { QuantumTimeline } from '@/components/ui/premium-process-timeline';
+import { QuantumTimeline } from '@/components/ui/quantum-process-timeline';
 import { HeroSection } from '@/components/ui/feature-carousel';
+import ImgSphereDemo from '@/components/ui/img-sphere-demo';
 
 const HashtaggerCarousel = () => {
   const images = [
@@ -186,8 +187,18 @@ export function HashtaggerPageContent() {
                 <QuantumTimeline />
             </section>
             
-            <section>
+            <section className="bg-background text-foreground py-20 md:py-24">
               <HashtaggerCarousel />
+            </section>
+
+            <section>
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-bold text-primary mb-4">Interactive Content Sphere</h2>
+                    <p className="text-lg text-slate-300 max-w-3xl mx-auto">Explore a dynamic sphere of content. Drag to rotate and click to view images in a modal.</p>
+                </div>
+                <div className="flex justify-center">
+                  <ImgSphereDemo />
+                </div>
             </section>
 
             {/* Features */}
