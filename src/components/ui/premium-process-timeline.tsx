@@ -26,36 +26,36 @@ interface QuantumTimelineProps {
 const DEMO_STEPS: ProcessStep[] = [
   {
     id: "01",
-    title: "Discovery & Planning",
-    subtitle: "Understanding Your Vision",
-    description: "We begin by diving deep into your business goals, target audience, and technical requirements to build a comprehensive project roadmap.",
+    title: "Profile",
+    subtitle: "Create your profile",
+    description: "Set up your identity and choose your circles — personal, professional, community.",
     details: ["Architecture Design", "Integration Planning", "Requirement Analysis", "Success Metrics"],
     duration: "1-2 weeks",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "02",
-    title: "Custom Solution Design",
-    subtitle: "Architecting Your AI Future",
-    description: "A dedicated team of AI experts builds and rigorously tests custom solutions designed to scale with your business.",
+    title: "Hashtags",
+    subtitle: "Follow your Hashtags",
+    description: "Pick topics, interests, communities and let your feed adapt around them.",
     details: ["Custom AI Model Development", "Security & Compliance Setup", "User Experience Design", "API Development"],
     duration: "2-4 weeks",
     image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "03",
-    title: "Implementation",
-    subtitle: "Bringing Your Vision to Life",
-    description: "Our development team brings the designs to life, building a robust and scalable solution with clean, efficient code.",
+    title: "Engage",
+    subtitle: "Create content & Engage",
+    description: "Post Clips, Hashflicks, join Events, and interact within circles.",
     details: ["Frontend Development", "Backend Development", "Database Integration", "CI/CD Setup"],
     duration: "4-6 weeks",
     image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     id: "04",
-    title: "Optimization & Launch",
-    subtitle: "Ensuring Peak Performance",
-    description: "We conduct rigorous testing and performance optimization to ensure a flawless launch and a seamless user experience.",
+    title: "Organize",
+    subtitle: "Organize your digital world",
+    description: "Save content into MemoryBank, build Collections, and revisit what matters to you.",
     details: ["Performance Tuning", "Security Audits", "User Acceptance Testing", "Deployment"],
     duration: "1-2 weeks",
     image: "https://images.unsplash.com/photo-1504208434309-cb69f4c42b88?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -104,8 +104,6 @@ export const QuantumTimeline = ({ steps = DEMO_STEPS, defaultStep }: QuantumTime
 const TimelineNav = ({ steps, activeStep, onStepClick }: { steps: ProcessStep[], activeStep: string, onStepClick: (id: string) => void }) => (
   <div className="flex items-center justify-between">
     <div className="flex items-center gap-4">
-      <div className="w-10 h-10 bg-accent/10 text-accent rounded-full flex items-center justify-center font-bold">Q</div>
-      <span className="text-xl font-bold text-foreground">Quantum Process</span>
     </div>
     <div className="hidden md:flex items-center gap-2 p-1 bg-muted/50 rounded-full">
       {steps.map(step => (
