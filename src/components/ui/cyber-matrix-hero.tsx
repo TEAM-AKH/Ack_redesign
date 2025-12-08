@@ -58,7 +58,7 @@ const CyberMatrixHero = () => {
 
             // Set initial characters
             for(const tile of grid.children) {
-                tile.textContent = chars[Math.floor(Math.random() * chars.length)];
+                (tile as HTMLDivElement).textContent = chars[Math.floor(Math.random() * chars.length)];
             }
         }
 
@@ -136,8 +136,8 @@ const CyberMatrixHero = () => {
                     
                     /* Use CSS variable for dynamic styling */
                     opacity: calc(0.1 + var(--intensity) * 0.9);
-                    color: hsl(120, 100%, calc(50% + var(--intensity) * 50%));
-                    text-shadow: 0 0 calc(var(--intensity) * 15px) hsl(120, 100%, 50%);
+                    color: hsl(275, 100%, calc(50% + var(--intensity) * 50%));
+                    text-shadow: 0 0 calc(var(--intensity) * 15px) hsl(275, 100%, 50%);
                     transform: scale(calc(1 + var(--intensity) * 0.2));
                     transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
                 }
@@ -145,9 +145,9 @@ const CyberMatrixHero = () => {
                     animation: glitch-anim 0.2s ease;
                 }
                 @keyframes glitch-anim {
-                    0% { transform: scale(1); color: #0f0; }
+                    0% { transform: scale(1); color: #A855F7; }
                     50% { transform: scale(1.2); color: #fff; text-shadow: 0 0 10px #fff; }
-                    100% { transform: scale(1); color: #0f0; }
+                    100% { transform: scale(1); color: #A855F7; }
                 }
             `}</style>
 
@@ -158,9 +158,9 @@ const CyberMatrixHero = () => {
                     variants={fadeUpVariants}
                     initial="hidden"
                     animate="visible"
-                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 mb-6"
+                    className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6"
                 >
-                    <Code className="h-4 w-4 text-green-400" />
+                    <Code className="h-4 w-4 text-purple-400" />
                     <span className="text-sm font-medium text-gray-200">
                         Decentralized Computing
                     </span>
