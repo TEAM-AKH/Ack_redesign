@@ -114,7 +114,7 @@ const CyberMatrixHero = () => {
                                 tile.classList.add('highlight');
                                 setTimeout(() => {
                                     tile.classList.remove('highlight');
-                                }, 500); 
+                                }, 2000); 
                             }
                         }
                     }
