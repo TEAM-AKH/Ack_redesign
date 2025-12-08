@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { CheckCircle, Users, Eye, Zap, ArrowRight, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { StickyScroll } from '@/components/ui/sticky-scroll-reveal';
 
 const whyChooseTms = [
     {
@@ -31,36 +32,36 @@ const whyChooseTms = [
     },
 ];
 
-const howItWorks = [
+const howItWorksContent = [
     {
-        step: 1,
-        title: 'Set up your hierarchy',
-        description: 'Define roles like Employee → Team Lead → Manager → Project Manager → Client → Admin.'
+      title: "1. Set up your hierarchy",
+      description:
+        "Define roles like Employee → Team Lead → Manager → Project Manager → Client → Admin.",
     },
     {
-        step: 2,
-        title: 'Create projects and tasks',
-        description: 'Assign ownership, deadlines, and dependencies.'
+      title: "2. Create projects and tasks",
+      description:
+        "Assign ownership, deadlines, and dependencies to structure your workflow.",
     },
     {
-        step: 3,
-        title: 'Track progress visually',
-        description: 'View dashboards, timelines, and completion statuses at every level.'
+      title: "3. Track progress visually",
+      description:
+        "View dashboards, timelines, and completion statuses at every level for full transparency.",
     },
     {
-        step: 4,
-        title: 'Review & optimize',
-        description: 'Use insights and history to refine workflows and improve performance.'
+      title: "4. Review & optimize",
+      description:
+        "Use insights and history to refine workflows and improve team performance over time.",
     },
 ];
 
 const features = [
-    'Role-based dashboards',
-    'Task creation, allocation & tracking',
-    'Project progress visualization',
-    'Meeting notes & M.O.M storage',
-    'Performance views (e.g., eKPI style tracking)',
-    'Real-time reflections of updates',
+    'Role-based access and dashboards',
+    'Task creation, assignment, and tracking',
+    'Project progress and timeline visualization',
+    'Centralized meeting notes and documentation',
+    'Custom performance metric tracking (eKPIs)',
+    'Real-time updates and notifications',
 ];
 
 const faqs = [
@@ -152,30 +153,10 @@ export function TmsPageContent() {
             
             {/* How It Works */}
             <section>
-                 <div className="text-center mb-16">
+                 <div className="text-center mb-24">
                     <h2 className="text-4xl font-bold text-primary mb-4">How It Works</h2>
                 </div>
-                <div className="relative grid md:grid-cols-4 gap-8">
-                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/20 -translate-y-1/2 hidden md:block"></div>
-                    <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent hidden md:block" style={{clipPath: 'polygon(0 0, 50% 0, 50% 100%, 0 100%)'}}></div>
-
-                    {howItWorks.map((step, index) => (
-                         <motion.div 
-                            key={index}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.5 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative bg-slate-900 p-6 rounded-2xl border border-slate-800"
-                        >
-                            <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-xl border-4 border-black">
-                                {step.step}
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-3 mt-8">{step.title}</h3>
-                            <p className="text-slate-400">{step.description}</p>
-                        </motion.div>
-                    ))}
-                </div>
+                <StickyScroll content={howItWorksContent} />
             </section>
 
             {/* Features */}
