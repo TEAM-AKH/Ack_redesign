@@ -77,7 +77,7 @@ const CyberMatrixHero = () => {
             }
 
             // Occasionally highlight a full word
-            setInterval(() => {
+            const highlightInterval = setInterval(() => {
                  if(Math.random() > 0.7) { // 30% chance to run this interval
                     const word = puzzleWords[Math.floor(Math.random() * puzzleWords.length)];
                     const startRow = Math.floor(Math.random() * (rows - 1));
@@ -91,11 +91,13 @@ const CyberMatrixHero = () => {
                             tile.classList.add('highlight');
                             setTimeout(() => {
                                 tile.classList.remove('highlight');
-                            }, 2000); // Highlight for 2 seconds
+                            }, 1500); // Highlight for 1.5 seconds
                         }
                     }
                 }
-            }, 3000);
+            }, 1000); // highlight every 1 second
+            
+            return () => clearInterval(highlightInterval);
         }
 
         const handleMouseMove = (e: MouseEvent) => {
@@ -122,11 +124,14 @@ const CyberMatrixHero = () => {
         window.addEventListener('resize', createGrid);
         window.addEventListener('mousemove', handleMouseMove);
         
-        createGrid();
+        const cleanupGrid = createGrid();
 
         return () => {
             window.removeEventListener('resize', createGrid);
             window.removeEventListener('mousemove', handleMouseMove);
+            if (cleanupGrid) {
+                cleanupGrid();
+            }
         };
 
     }, [isClient]);
