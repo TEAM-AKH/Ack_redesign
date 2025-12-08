@@ -62,17 +62,40 @@ const CyberMatrixHero = () => {
             grid.style.setProperty('--columns', String(columns));
             grid.style.setProperty('--rows', String(rows));
             
-            createTiles(columns * rows);
+            const numTiles = columns * rows;
+            createTiles(numTiles);
 
-            // Set initial characters with a higher chance of being from the puzzle
-            for(const tile of grid.children) {
-                 if (Math.random() > 0.8) { // 20% chance to be a puzzle word piece
+            // Set initial characters and highlight puzzle words
+            const tiles = Array.from(grid.children) as HTMLDivElement[];
+            for(const tile of tiles) {
+                if (Math.random() > 0.8) { 
                     const word = puzzleWords[Math.floor(Math.random() * puzzleWords.length)];
-                    (tile as HTMLDivElement).textContent = word[Math.floor(Math.random() * word.length)];
+                    tile.textContent = word[Math.floor(Math.random() * word.length)];
                 } else {
-                    (tile as HTMLDivElement).textContent = baseChars[Math.floor(Math.random() * baseChars.length)];
+                    tile.textContent = baseChars[Math.floor(Math.random() * baseChars.length)];
                 }
             }
+
+            // Occasionally highlight a full word
+            setInterval(() => {
+                 if(Math.random() > 0.7) { // 30% chance to run this interval
+                    const word = puzzleWords[Math.floor(Math.random() * puzzleWords.length)];
+                    const startRow = Math.floor(Math.random() * (rows - 1));
+                    let startCol = Math.floor(Math.random() * (columns - word.length));
+                    
+                    for (let i = 0; i < word.length; i++) {
+                        const tileIndex = startRow * columns + startCol + i;
+                        if (tileIndex < tiles.length) {
+                            const tile = tiles[tileIndex];
+                            tile.textContent = word[i];
+                            tile.classList.add('highlight');
+                            setTimeout(() => {
+                                tile.classList.remove('highlight');
+                            }, 2000); // Highlight for 2 seconds
+                        }
+                    }
+                }
+            }, 3000);
         }
 
         const handleMouseMove = (e: MouseEvent) => {
@@ -157,10 +180,26 @@ const CyberMatrixHero = () => {
                 .tile.glitch {
                     animation: glitch-anim 0.2s ease;
                 }
+                .tile.highlight {
+                    color: #E9D5FF;
+                    text-shadow: 0 0 10px #E9D5FF, 0 0 20px #C084FC;
+                    font-weight: bold;
+                    animation: highlight-pulse 1s infinite alternate;
+                }
+
                 @keyframes glitch-anim {
                     0% { transform: scale(1); color: #A855F7; }
                     50% { transform: scale(1.2); color: #fff; text-shadow: 0 0 10px #fff; }
                     100% { transform: scale(1); color: #A855F7; }
+                }
+
+                @keyframes highlight-pulse {
+                    from {
+                        opacity: 0.8;
+                    }
+                    to {
+                        opacity: 1;
+                    }
                 }
             `}</style>
 
@@ -196,7 +235,7 @@ const CyberMatrixHero = () => {
                     animate="visible"
                     className="max-w-2xl mx-auto text-lg text-gray-400 mb-10"
                 >
-                    A multi-layer security foundation that protects your data, access, and operations. Built for organizations that treat security as a core requirement.
+                     A multi-layer security foundation that protects your data, access, and operations. Built for organizations that treat security as a core requirement.
                 </motion.p>
 
                 <motion.div
@@ -215,4 +254,3 @@ const CyberMatrixHero = () => {
     );
 };
 export default CyberMatrixHero;
-
