@@ -5,8 +5,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { CheckCircle, Users, Eye, Zap, ArrowRight, TrendingUp } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+import { useRef } from 'react';
 
 const whyChooseTms = [
     {
@@ -95,9 +96,6 @@ const Step = ({ step, title, description, isLast }: { step: number; title: strin
                 <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground font-bold text-2xl border-4 border-black z-10">
                     {step}
                 </div>
-                {!isLast && (
-                    <div className="w-1 h-48 bg-primary/30 mt-2"></div>
-                )}
             </div>
             <div className="bg-slate-900 p-6 rounded-xl border border-slate-800 flex-1 mt-2">
                 <h3 className="text-2xl font-bold text-white mb-3">{title}</h3>
@@ -105,6 +103,75 @@ const Step = ({ step, title, description, isLast }: { step: number; title: strin
             </div>
         </motion.div>
     );
+};
+
+const HowItWorks = () => {
+  const targetRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start center", "end center"],
+  });
+
+  const pathLength = useTransform(scrollYProgress, [0, 0.9], [0, 1]);
+  const stepOpacity = (i: number) => useTransform(scrollYProgress, [i * 0.2, i * 0.2 + 0.2], [0.1, 1]);
+
+  return (
+    <section ref={targetRef}>
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold text-primary mb-4">How It Works</h2>
+      </div>
+      <div className="max-w-3xl mx-auto relative">
+        {/* SVG Line */}
+        <div className="absolute left-[28px] top-0 h-full w-1 flex justify-center">
+          <svg width="2" height="100%" className="h-full">
+            <defs>
+              <linearGradient id="line-gradient" x1="0" y1="0" x2="0" y2="100%">
+                <stop offset="0%" stopColor="#A855F7" />
+                <stop offset="100%" stopColor="#6119aa" />
+              </linearGradient>
+            </defs>
+            {/* Background line */}
+            <motion.path
+              d="M 1 0 V 1000"
+              stroke="#334155"
+              strokeWidth="2"
+            />
+            {/* Glowing line */}
+            <motion.path
+              d="M 1 0 V 1000"
+              stroke="url(#line-gradient)"
+              strokeWidth="2"
+              style={{ pathLength }}
+              initial={{ pathLength: 0 }}
+            />
+             {/* Glow effect */}
+            <motion.path
+              d="M 1 0 V 1000"
+              stroke="url(#line-gradient)"
+              strokeWidth="4"
+              strokeOpacity="0.5"
+              style={{ pathLength, filter: "blur(4px)" }}
+              initial={{ pathLength: 0 }}
+            />
+          </svg>
+        </div>
+
+        <div className="space-y-16">
+          {howItWorksContent.map((step, index) => (
+             <motion.div key={index} style={{ opacity: stepOpacity(index) }}>
+                <Step
+                    key={index}
+                    step={step.step}
+                    title={step.title}
+                    description={step.description}
+                    isLast={index === howItWorksContent.length - 1}
+                />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 
@@ -175,23 +242,7 @@ export function TmsPageContent() {
                 </div>
             </section>
             
-            {/* How It Works */}
-            <section>
-                 <div className="text-center mb-16">
-                    <h2 className="text-4xl font-bold text-primary mb-4">How It Works</h2>
-                </div>
-                <div className="max-w-3xl mx-auto flex flex-col items-center">
-                    {howItWorksContent.map((step, index) => (
-                        <Step
-                            key={index}
-                            step={step.step}
-                            title={step.title}
-                            description={step.description}
-                            isLast={index === howItWorksContent.length - 1}
-                        />
-                    ))}
-                </div>
-            </section>
+            <HowItWorks />
 
             {/* Features */}
             <section className="bg-primary/5 p-12 rounded-2xl border border-primary/20">
@@ -251,3 +302,4 @@ export function TmsPageContent() {
     </div>
   );
 }
+
