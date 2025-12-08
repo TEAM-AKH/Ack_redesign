@@ -66,7 +66,7 @@ export const Card = ({
         <h2 className='text-2xl text-center font-semibold'>{title}</h2>
         <div className={`flex h-full mt-5 gap-10`}>
           <div className={`w-[40%] relative top-[10%]`}>
-            <h3 className="font-bold mb-2">{shortTitle}</h3>
+            <h3 className='font-bold mb-2 text-lg'>{shortTitle}</h3>
             <p className='text-sm'>{description}</p>
             <span className='flex items-center gap-2 pt-2'>
               <Link
