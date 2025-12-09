@@ -109,7 +109,7 @@ export function HashtaggerPageContent() {
   return (
     <div className="flex flex-col bg-black text-white">
       {/* Hero Section */}
-      <header className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
+      <header className="relative h-screen flex items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 bg-grid-white/[0.05] [mask-image:radial-gradient(ellipse_100%_50%_at_50%_50%,#000_60%,transparent_100%)]"></div>
         <div className="relative container z-10">
             <motion.h1 
