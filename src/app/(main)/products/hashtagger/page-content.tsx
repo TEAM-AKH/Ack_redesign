@@ -192,7 +192,7 @@ export function HashtaggerPageContent() {
             </section>
 
             <section>
-                <div className="text-center mb-8">
+                <div className="text-center mb-2">
                     <h2 className="text-4xl font-bold text-primary mb-4">Interactive Content Sphere</h2>
                     <p className="text-lg text-slate-300 max-w-3xl mx-auto">Explore a dynamic sphere of content. Drag to rotate and click to view images in a modal.</p>
                 </div>
