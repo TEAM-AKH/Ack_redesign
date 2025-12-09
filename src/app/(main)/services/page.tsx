@@ -5,27 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { services } from '@/lib/services';
 import { DynamicFrameLayout } from '@/components/ui/dynamic-frame-layout';
 
-// Sample video URLs. In a real app, these would be different for each service.
-const serviceVideos = [
-  "https://assets.mixkit.co/videos/preview/mixkit-cloud-of-blue-and-red-ink-underwater-4339-large.mp4", // Cloud
-  "https://assets.mixkit.co/videos/preview/mixkit-binary-code-running-on-a-screen-1090-large.mp4", // Cyber Security
-  "https://assets.mixkit.co/videos/preview/mixkit-brain-connections-with-flashing-lights-12753-large.mp4", // AI
-  "https://assets.mixkit.co/videos/preview/mixkit-a-holographic-projection-of-a-city-with-fast-cars-42284-large.mp4", // Data Analytics
-  "https://assets.mixkit.co/videos/preview/mixkit-business-analytics-on-a-tablet-42171-large.mp4", // Digital Marketing
-  "https://assets.mixkit.co/videos/preview/mixkit-man-working-on-a-laptop-42340-large.mp4", // UX/UI
-  "https://assets.mixkit.co/videos/preview/mixkit-futuristic-long-thin-tunnel-with-bright-lights-39656-large.mp4", // Web Solutions
-  "https://assets.mixkit.co/videos/preview/mixkit-man-working-on-his-laptop-37843-large.mp4", // SAP
-  "https://assets.mixkit.co/videos/preview/mixkit-abstract-thin-lines-in-endless-motion-4202-large.mp4"  // Generic Tech
-];
-
-// Frame assets - using placeholders
-const frameAssets = {
-  corner: "https://21st.dev/r/oeneco/corner.png",
-  edgeH: "https://21st.dev/r/oeneco/edge-h.png",
-  edgeV: "https://21st.dev/r/oeneco/edge-v.png",
-};
-
-
 const gridPositions = [
   { x: 0, y: 0, w: 4, h: 4 },
   { x: 4, y: 0, w: 4, h: 4 },
@@ -43,12 +22,12 @@ export default function ServicesPage() {
     id: index + 1,
     title: service.title,
     description: service.description,
-    link: service.link,
-    video: serviceVideos[index % serviceVideos.length],
+    link: service.slug,
+    image: service.image?.imageUrl || `https://picsum.photos/seed/${index}/600/400`,
     defaultPos: gridPositions[index],
-    corner: frameAssets.corner,
-    edgeHorizontal: frameAssets.edgeH,
-    edgeVertical: frameAssets.edgeV,
+    corner: "https://21st.dev/r/oeneco/corner.png",
+    edgeHorizontal: "https://21st.dev/r/oeneco/edge-h.png",
+    edgeVertical: "https://21st.dev/r/oeneco/edge-v.png",
     mediaSize: 1.1,
     borderThickness: 16,
     borderSize: 90,

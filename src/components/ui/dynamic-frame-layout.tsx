@@ -3,10 +3,11 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from 'next/image';
 
 interface Frame {
   id: number
-  video: string
+  image: string
   defaultPos: { x: number; y: number; w: number; h: number }
   corner: string
   edgeHorizontal: string
@@ -21,7 +22,7 @@ interface Frame {
 }
 
 interface FrameComponentProps {
-  video: string
+  image: string
   width: number | string
   height: number | string
   className?: string
@@ -38,7 +39,7 @@ interface FrameComponentProps {
 }
 
 function FrameComponent({
-  video,
+  image,
   width,
   height,
   className = "",
@@ -53,15 +54,6 @@ function FrameComponent({
   title,
   description
 }: FrameComponentProps) {
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    if (isHovered) {
-      videoRef.current?.play()
-    } else {
-      videoRef.current?.pause()
-    }
-  }, [isHovered])
 
   return (
     <div
@@ -93,13 +85,12 @@ function FrameComponent({
               transition: "transform 0.3s ease-in-out",
             }}
           >
-            <video
+            <Image
+              src={image}
+              alt={title}
+              width={600}
+              height={400}
               className="w-full h-full object-cover"
-              src={video}
-              loop
-              muted
-              playsInline
-              ref={videoRef}
             />
           </div>
         </div>
@@ -244,7 +235,7 @@ export function DynamicFrameLayout({
         return (
           <motion.a
             key={frame.id}
-            href={frame.link}
+            href={`/services/${frame.link}`}
             className="relative"
             style={{
               transformOrigin,
@@ -254,7 +245,7 @@ export function DynamicFrameLayout({
             onMouseLeave={() => setHovered(null)}
           >
             <FrameComponent
-              video={frame.video}
+              image={frame.image}
               title={frame.title}
               description={frame.description}
               width="100%"
