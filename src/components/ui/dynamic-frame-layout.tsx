@@ -159,19 +159,29 @@ function FrameComponent({
             />
           </div>
         )}
-        <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute inset-0 z-10 flex flex-col items-center justify-center p-4 bg-black/70 pointer-events-none"
+        <div
+          className="absolute inset-0 z-10 flex flex-col items-center justify-center p-4 bg-black/50 transition-all duration-300"
+        >
+          <motion.h3 
+            className="text-2xl font-bold text-white text-center"
+            animate={{ y: isHovered ? -10 : 0 }}
           >
-            <h3 className="text-2xl font-bold text-white text-center">{title}</h3>
-            <p className="text-sm text-center text-white/80 mt-2">{description}</p>
-          </motion.div>
-        )}
-        </AnimatePresence>
+            {title}
+          </motion.h3>
+          <AnimatePresence>
+            {isHovered && (
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ delay: 0.1 }}
+                className="text-sm text-center text-white/80 mt-2"
+              >
+                {description}
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   )
