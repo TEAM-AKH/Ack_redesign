@@ -7,15 +7,15 @@ import { DynamicFrameLayout } from '@/components/ui/dynamic-frame-layout';
 
 // Sample video URLs. In a real app, these would be different for each service.
 const serviceVideos = [
-  "https://cdn.pixabay.com/video/2024/03/27/204049-923126319_large.mp4", // Cloud
-  "https://cdn.pixabay.com/video/2024/03/10/202159-918749007_large.mp4", // Cyber Security
-  "https://cdn.pixabay.com/video/2024/05/20/210874-944747517_large.mp4", // AI
-  "https://cdn.pixabay.com/video/2023/10/24/184131-874246039_large.mp4", // Data Analytics
-  "https://cdn.pixabay.com/video/2022/08-03/121852-738930455_large.mp4", // Digital Marketing
-  "https://cdn.pixabay.com/video/2024/01/24/195955-905544485_large.mp4", // UX/UI
-  "https://cdn.pixabay.com/video/2023/04/04/156906-814981149_large.mp4", // Web Solutions
-  "https://cdn.pixabay.com/video/2022/10/21/133718-762967204_large.mp4", // SAP
-  "https://cdn.pixabay.com/video/2023/11/07/186534-881523735_large.mp4"  // Generic Tech
+  "https://assets.mixkit.co/videos/preview/mixkit-cloud-of-blue-and-red-ink-underwater-4339-large.mp4", // Cloud
+  "https://assets.mixkit.co/videos/preview/mixkit-binary-code-running-on-a-screen-1090-large.mp4", // Cyber Security
+  "https://assets.mixkit.co/videos/preview/mixkit-brain-connections-with-flashing-lights-12753-large.mp4", // AI
+  "https://assets.mixkit.co/videos/preview/mixkit-a-holographic-projection-of-a-city-with-fast-cars-42284-large.mp4", // Data Analytics
+  "https://assets.mixkit.co/videos/preview/mixkit-business-analytics-on-a-tablet-42171-large.mp4", // Digital Marketing
+  "https://assets.mixkit.co/videos/preview/mixkit-man-working-on-a-laptop-42340-large.mp4", // UX/UI
+  "https://assets.mixkit.co/videos/preview/mixkit-futuristic-long-thin-tunnel-with-bright-lights-39656-large.mp4", // Web Solutions
+  "https://assets.mixkit.co/videos/preview/mixkit-man-working-on-his-laptop-37843-large.mp4", // SAP
+  "https://assets.mixkit.co/videos/preview/mixkit-abstract-thin-lines-in-endless-motion-4202-large.mp4"  // Generic Tech
 ];
 
 // Frame assets - using placeholders
