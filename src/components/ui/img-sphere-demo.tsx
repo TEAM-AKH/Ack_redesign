@@ -122,7 +122,7 @@ const CONFIG: SphereConfig = {
 
 export default function ImgSphereDemo() {
   return (
-    <main className="w-full p-0 flex justify-center items-center min-h-screen">
+    <main className="min-w-screen p-0 flex justify-center items-start min-h-screen">
       <SphereImageGrid
         images={IMAGES}
         {...CONFIG}
