@@ -83,6 +83,7 @@ const benefits = [
 ];
 
 export default function CareersPage() {
+  const recipientEmail = 'venubull07ff@gmail.com';
   return (
     <div className="flex flex-col bg-background">
       <header className="py-32 md:py-48 text-center bg-black">
@@ -150,9 +151,9 @@ export default function CareersPage() {
                                 </div>
                             </div>
                             <Button asChild variant="secondary" className="bg-slate-800 text-slate-100 hover:bg-slate-700">
-                                <Link href="#">
+                                <a href={`mailto:${recipientEmail}?subject=Application for ${encodeURIComponent(job.title)}`}>
                                     Apply Now <ArrowRight className="ml-2 h-4 w-4" />
-                                </Link>
+                                </a>
                             </Button>
                         </CardContent>
                     </Card>
